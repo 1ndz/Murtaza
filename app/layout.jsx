@@ -5,21 +5,33 @@ import Link from "next/link";
 
 export default function RootLayout({ children }) {
     useEffect(() => {
-        if (window.__fxLoaded) return; // منع التحميل المكرر
+        // منع التحميل المكرر
+        if (window.__fxLoaded) return;
         window.__fxLoaded = true;
 
+        // تحميل سكربت three.js
         const three = document.createElement("script");
         three.src = "/js/three.js";
         three.async = true;
         document.body.appendChild(three);
 
-        const main = document.createElement("script");
-        main.src = "/js/main.js";
-        main.async = true;
-        document.body.appendChild(main);
+        // تحميل صوت النقرة مرة وحدة
+        const clickSound = new Audio("/audio/m1.mp3");
+        clickSound.preload = "auto";
+
+        // عند النقر على روابط nav فقط
+        const handleClick = (e) => {
+            const link = e.target.closest("nav a");
+            if (link) {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(() => { });
+            }
+        };
+
+        document.addEventListener("click", handleClick);
 
         return () => {
-            // نتركها ما نحذفها، لأن نريدها تبقى بكل الصفحات
+            document.removeEventListener("click", handleClick);
         };
     }, []);
 
@@ -28,16 +40,6 @@ export default function RootLayout({ children }) {
             <body>
                 <div className="box">
                     <canvas id="fx"></canvas>
-
-                    <div className="music-toggle active" id="musicBtn">
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                    </div>
-
-                    <audio id="music" src="/audio/m1.mp3" loop></audio>
 
                     <nav>
                         <Link href="/">HOME</Link>
