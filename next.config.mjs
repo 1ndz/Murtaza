@@ -1,5 +1,9 @@
 const nextConfig = {
-    reactStrictMode: false,
+    reactStrictMode: true,
+    swcMinify: true,
+    compress: true,
+    poweredByHeader: false,
+    output: 'standalone'
 };
 
 export default nextConfig;
