@@ -5,7 +5,7 @@ let DPR = Math.min(devicePixelRatio || 1, 2);
 let W = 0, H = 0;
 
 // تقليل عدد الجسيمات
-const PCOUNT = 500;
+const PCOUNT = 300;
 const STEP = 0.8;
 const NOISE_SCALE = 0.002;
 const TRAIL = 0.08;
@@ -36,7 +36,7 @@ function initParticles() {
         y: Math.random() * innerHeight,
         vx: 0,
         vy: 0,
-        hue: 200 + Math.random() * 80
+        hue: 120 + Math.random() * 70
     }));
 }
 
