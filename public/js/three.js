@@ -2,7 +2,7 @@ var canvas = document.getElementById('fx');
 var ctx = canvas.getContext('2d', { alpha: true });
 let W = 0, H = 0, DPR = Math.min(devicePixelRatio || 1, 2);
 
-var PCOUNT = 1400;
+var PCOUNT = 1100;
 var STEP = 0.9;
 var NOISE_SCALE = 0.0018;
 var TRAIL = 0.09;
