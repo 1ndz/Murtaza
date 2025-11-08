@@ -36,7 +36,7 @@ function initParticles() {
         y: Math.random() * innerHeight,
         vx: 0,
         vy: 0,
-        hue: 120 + Math.random() * 70
+        hue: 200 + Math.random() * 80
     }));
 }
 
