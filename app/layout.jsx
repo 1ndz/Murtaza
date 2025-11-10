@@ -44,6 +44,8 @@ export default function RootLayout({ children }) {
                 <div className="box">
                     <canvas id="fx"></canvas>
 
+                    <hr className="NavDivider" />
+
                     <nav>
                         <Link href="/" className={pathname === "/" ? "active" : ""}>HOME</Link>
                         <Link href="/work" className={pathname === "/work" ? "active" : ""}>WORK</Link>

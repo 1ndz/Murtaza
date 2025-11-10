@@ -73,7 +73,6 @@
 .InfoAwards {
     width: 100%;
     height: auto;
-    padding-bottom: 50px;
 }
 
 .BoxAwards {
@@ -89,7 +88,43 @@
 }
 
 .AwImg {
-    width: 25px;
+    width: auto;
+    height: 25px;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.BoxAwards h3 {
+    width: 100%;
+    font-size: 10px;
+    color: #b3b3b3;
+    text-align: center;
+    font-family: var(--fn3);
+}
+
+
+/* Certificates */
+
+.InfoCert {
+    width: 100%;
+    height: auto;
+}
+
+.BoxCert {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 25px;
+    grid-column: 3;
+    gap: 5px;
+    row-gap: 50px;
+}
+
+.CertImg {
+    width: auto;
     height: 25px;
     object-fit: cover;
     pointer-events: none;
@@ -97,7 +132,7 @@
     filter: invert(1) brightness(2);
 }
 
-.BoxAwards h3 {
+.BoxCert h3 {
     width: 100%;
     font-size: 10px;
     color: #b3b3b3;

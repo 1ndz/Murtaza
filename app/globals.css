@@ -121,6 +121,21 @@ canvas {
 }
 
 /* التنقل */
+
+.NavDivider {
+    width: 90%;
+    margin: 2px auto;
+    position: fixed;
+    border: none;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    height: 1px;
+    opacity: 0.6;
+    background: linear-gradient(to right, transparent, #d08df5, #7b00bd, #d08df5, transparent);
+}
+
 nav {
     position: fixed;
     bottom: 20px;
@@ -155,14 +170,5 @@ nav a.active {
     border: none;
     height: 1px;
     background: linear-gradient(to right, transparent, #c86bfa, transparent);
-    opacity: 0.6;
-}
-
-.slider {
-    width: 90%;
-    margin: 2rem auto;
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #4023e4, transparent);
     opacity: 0.6;
 }

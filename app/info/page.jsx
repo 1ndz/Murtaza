@@ -64,7 +64,7 @@ export default function Home() {
                         <hr className="divider" />
 
                         <div className="InfoAwards">
-                            <h2>- [Certificates | Awards] -</h2>
+                            <h2>- [Awards] -</h2>
                             <div className="BoxAwards">
                                 <div className="animate-on-scroll" data-anim="right">
                                     <Image className="AwImg" src={Img1} alt="Cannes Gold" loading="lazy" />
@@ -106,19 +106,24 @@ export default function Home() {
                                     <Image className="AwImg" src={Img2} alt="Cutting Edge of the Week" loading="lazy" />
                                     <h3>Cutting Edge of the Week</h3>
                                 </div>
+                            </div>
+                        </div>
 
-                                <hr className="slider" />
+                        <hr className="divider" />
 
+                        <div className="InfoCert">
+                            <h2>- [Certificates] -</h2>
+                            <div className="BoxCert">
                                 <div className="animate-on-scroll" data-anim="right">
-                                    <Image className="AwImg" src={Img7} alt="" loading="lazy" />
+                                    <Image className="CertImg" src={Img7} alt="" loading="lazy" />
                                     <h3>Deep Learning Engineer</h3>
                                 </div>
                                 <div className="animate-on-scroll" data-anim="right">
-                                    <Image className="AwImg" src={Img7} alt="" loading="lazy" />
+                                    <Image className="CertImg" src={Img7} alt="" loading="lazy" />
                                     <h3>Machine Learning Engineer</h3>
                                 </div>
                                 <div className="animate-on-scroll" data-anim="right">
-                                    <Image className="AwImg" src={Img7} alt="" loading="lazy" />
+                                    <Image className="CertImg" src={Img7} alt="" loading="lazy" />
                                     <h3>Quantitative Analyst</h3>
                                 </div>
                             </div>
