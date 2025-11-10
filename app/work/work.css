@@ -57,6 +57,7 @@
         font-size: 16px;
         text-align: left;
         color: #fff;
+        padding: 0;
         padding-left: 7.5px;
         transform: translateY(-77.5px);
     }
@@ -66,6 +67,7 @@
         font-size: 12px;
         text-align: left;
         color: #c4c4c4;
+        padding: 0;
         padding-left: 7.5px;
         transform: translateY(-77.5px);
     }
