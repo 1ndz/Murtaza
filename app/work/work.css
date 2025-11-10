@@ -47,19 +47,19 @@
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 16px;
         text-align: left;
         color: #fff;
-        padding-left: 5px;
-        transform: translateY(-75px);
+        padding-left: 7.5px;
+        transform: translateY(-70px);
     }
 
     p {
         width: 95%;
-        font-size: 14px;
+        font-size: 12px;
         text-align: left;
         color: #c4c4c4;
-        padding-left: 5px;
-        transform: translateY(-70px);
+        padding-left: 7.5px;
+        transform: translateY(-65px);
     }
 }
