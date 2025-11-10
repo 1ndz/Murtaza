@@ -13,6 +13,11 @@ export default function Work() {
                         <p>Projects&nbsp;|&nbsp;Collaborations&nbsp;|&nbsp;Explorations</p>
                     </div>
                 </div>
+                <div className="View">
+                    <div className="item">
+                        <img src="./img/movies.webp" alt="App Movies" />
+                    </div>
+                </div>
             </div>
         </div>
     );
