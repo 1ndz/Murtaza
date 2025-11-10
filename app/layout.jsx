@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 
         // عند النقر على روابط nav فقط
         const handleClick = (e) => {
-            const link = e.target.closest("nav a");
+            const link = e.target.closest("a");
             if (link) {
                 clickSound.currentTime = 0;
                 clickSound.play().catch(() => { });
