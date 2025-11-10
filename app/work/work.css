@@ -8,9 +8,10 @@
     position: absolute;
     background-color: transparent;
     backdrop-filter: blur(2.5px);
-    padding: 15px 5px;
     justify-content: center;
     text-align: center;
+    border-radius: 5px;
+    padding: 15px 5px;
     margin: 0;
     top: 15%;
     left: 50%;
@@ -18,20 +19,43 @@
 
     .item {
         width: 95%;
-        height: auto;
-        border: 1px solid #444;
+        height: 250px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: 10px;
+        box-shadow:
+            -6px 6px 12px rgba(0, 0, 0, 0.6),
+            2px -2px 4px rgba(255, 255, 255, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .item:hover {
+        transform: translateY(-3px);
+        box-shadow:
+            -8px 8px 16px rgba(0, 0, 0, 0.7),
+            3px -3px 6px rgba(255, 255, 255, 0.12);
     }
 
     .img {
         width: 100%;
-        height: auto;
-        background-size: cover;
+        height: 250px;
+        object-fit: cover;
     }
 
     h2 {
         font-size: 18px;
         text-align: left;
-        color: #444;
+        color: #fff;
+        padding-left: 5px;
+        transform: translateY(-75px);
+    }
+
+    p {
+        width: 95%;
+        font-size: 14px;
+        text-align: left;
+        color: #c4c4c4;
+        padding-left: 5px;
+        transform: translateY(-70px);
     }
 }
