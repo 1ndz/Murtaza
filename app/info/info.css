@@ -6,9 +6,9 @@
 .Infoer {
     width: 100%;
     height: 93.5%;
-    margin: 0;
-    padding: 0;
     position: absolute;
+    padding: 0;
+    margin: 0;
     inset: 0;
     overflow: scroll;
 }
@@ -68,6 +68,7 @@
 .InfoAwards {
     width: 100%;
     height: auto;
+    padding-bottom: 50px;
 }
 
 .BoxAwards {
@@ -78,6 +79,7 @@
     justify-content: space-around;
     margin-top: 25px;
     gap: 10px;
+    row-gap: 50px;
 }
 
 .AwImg {

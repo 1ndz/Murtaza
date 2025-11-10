@@ -2,6 +2,7 @@
 import "./info.css";
 import Image from "next/image";
 import Img1 from "./img/img1.webp";
+import Img3 from "./img/img3.svg";
 
 export default function Home() {
     return (
@@ -37,15 +38,27 @@ export default function Home() {
                             <div className="BoxAwards">
                                 <div>
                                     <Image className="AwImg" src={Img1} alt="Cannes Gold" />
-                                    <h2>Cannes Gold</h2>
+                                    <h2>Cannes Gold X2</h2>
                                 </div>
                                 <div>
                                     <Image className="AwImg" src={Img1} alt="Cannes Gold" />
-                                    <h2>Cannes Gold</h2>
+                                    <h2>Cannes Silver</h2>
                                 </div>
                                 <div>
                                     <Image className="AwImg" src={Img1} alt="Cannes Gold" />
-                                    <h2>Cannes Gold</h2>
+                                    <h2>Cannes Bronze X4</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix" />
+                                    <h2>Red Dot - DDS</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix" />
+                                    <h2>Red Dot - Gran Prix X2</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix" />
+                                    <h2>Red Dot - X5</h2>
                                 </div>
                             </div>
                         </div>
