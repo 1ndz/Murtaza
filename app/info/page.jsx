@@ -1,6 +1,8 @@
 "use client";
 import "./info.css";
 import Image from "next/image";
+import { useEffect } from "react";
+
 import Img1 from "./img/img1.webp";
 import Img2 from "./img/img2.webp";
 import Img4 from "./img/img4.webp";
@@ -13,6 +15,24 @@ import i2 from "./icon/i2.webp";
 import i3 from "./icon/i3.webp";
 
 export default function Home() {
+    useEffect(() => {
+        const elements = document.querySelectorAll(".animate-on-scroll");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        elements.forEach((el) => observer.observe(el));
+    }, []);
+
     return (
         <div suppressHydrationWarning>
             <div className="box InfoBox">
@@ -20,14 +40,14 @@ export default function Home() {
 
                 <div className="Infoer">
                     <div className="overlay InfoOverlay">
-                        <div className="hero">
+                        <div className="hero animate-on-scroll" data-anim="up">
                             <h1>INFO</h1>
                             <p>CREATIVE&nbsp;|&nbsp;TECHNOLOGIST&nbsp;|&nbsp;DEVELOPER</p>
                         </div>
                     </div>
 
                     <div className="InfoView">
-                        <div className="InfoBio">
+                        <div className="InfoBio animate-on-scroll" data-anim="left">
                             <h2>- [BIO] -</h2>
                             <p>Murtaza Al-Omran is a multidisciplinary AI Developer, Full-Stack Engineer, and Creative Technologist from southern Iraq, blending code, art, and cognition into seamless digital experiences. With over four years of professional experience, he builds systems where logic meets imagination — a synthesis of science and emotion translated through design and code.</p>
                             <p><a href="/work">Working</a> across artificial intelligence, web development, and digital media, Murtaza focuses on creating meaningful interactions powered by data-driven intelligence and visual storytelling. His work explores how neural networks and generative algorithms can become creative collaborators, rather than mere tools.</p>
@@ -40,9 +60,9 @@ export default function Home() {
                             <p>Currently, Murtaza is working on several projects involving AI-assisted design, generative storytelling, and real-time visual systems, merging human creativity with algorithmic logic. His ultimate goal: to build a new generation of digital experiences where artificial intelligence isn’t an imitation of humanity, but an extension of it.</p>
                         </div>
 
-                        <hr class="divider" />
+                        <hr className="divider" />
 
-                        <div className="InfoAwards">
+                        <div className="InfoAwards animate-on-scroll" data-anim="right">
                             <h2>- [Certificates | Awards] -</h2>
                             <div className="BoxAwards">
                                 <div>
@@ -78,19 +98,17 @@ export default function Home() {
                                     <h2>The Webby Website - X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img6} alt="Craft Website Design Merit" loading="lazy" />
-                                    <h2>Craft Website Design Merit</h2>
+                                    <Image className="AwImg" src={Img6} alt="Craft Website Design Merit" loading="lazy" /><h2>Craft Website Design Merit</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img2} alt="TCutting Edge of the Week" loading="lazy" />
-                                    <h2>Cutting Edge of the Week</h2>
+                                    <Image className="AwImg" src={Img2} alt="Cutting Edge of the Week" loading="lazy" /><h2>Cutting Edge of the Week</h2>
                                 </div>
                             </div>
                         </div>
 
-                        <hr class="divider" />
+                        <hr className="divider" />
 
-                        <div className="InfoContact">
+                        <div className="InfoContact animate-on-scroll" data-anim="up">
                             <h2>- [Contact] -</h2>
                             <div className="BoxContact">
                                 <div>
