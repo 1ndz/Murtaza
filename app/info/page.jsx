@@ -18,8 +18,8 @@ export default function Home() {
 
                 <div className="InfoView">
                     {/* <Image src={InfoImg} alt="Info Murtaza" className="InfoImg" /> */}
+                    <h2>- [BIO] -</h2>
                     <div className="InfoBio">
-                        <h2>- [BIO] -</h2>
                         <p>Murtaza Al-Omran is a multidisciplinary AI Developer, Full-Stack Engineer, and Creative Technologist from southern Iraq, blending code, art, and cognition into seamless digital experiences. With over four years of professional experience, he builds systems where logic meets imagination — a synthesis of science and emotion translated through design and code.</p>
                         <p>Working across artificial intelligence, web development, and digital media, Murtaza focuses on creating meaningful interactions powered by data-driven intelligence and visual storytelling. His work explores how neural networks and generative algorithms can become creative collaborators, rather than mere tools.</p>
                         <p>As an AI Model Trainer, he develops and fine-tunes neural architectures for natural language processing, computer vision, and generative systems. His research often investigates the boundaries of creative automation — training models to think, react, and even “improvise” within aesthetic constraints. Using technologies such as TensorFlow, PyTorch, and OpenAI frameworks, he crafts models that blur the line between human intuition and machine precision.</p>
