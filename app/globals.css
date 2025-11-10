@@ -40,6 +40,7 @@ body {
     position: relative;
     align-items: center;
     display: block;
+    transform: scale(1.0);
     padding: 0;
     margin: 0;
     touch-action: pan-x pan-y;

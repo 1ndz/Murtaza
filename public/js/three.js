@@ -143,7 +143,7 @@ function step() {
     }
 
     // تأثير 3D خفيف حسب ميل الهاتف
-    document.body.style.transform = `rotateX(${tilt.y * 10}deg) rotateY(${tilt.x * 10}deg) scale(1.02)`;
+    document.body.style.transform = `rotateX(${tilt.y * 10}deg) rotateY(${tilt.x * 10}deg) scale(1.0)`;
     requestAnimationFrame(step);
 }
 
