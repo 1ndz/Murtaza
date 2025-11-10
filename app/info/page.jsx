@@ -49,7 +49,7 @@ export default function Home() {
 
                     <div className="InfoView">
                         <div className="InfoBio">
-                            <h2>- [BIO] -</h2>
+                            <h2 className="animate-on-scroll" data-anim="left">- [BIO] -</h2>
                             <p className="animate-on-scroll" data-anim="left">Murtaza Al-Omran is a multidisciplinary AI Developer, Full-Stack Engineer, and Creative Technologist from southern Iraq, blending code, art, and cognition into seamless digital experiences. With over four years of professional experience, he builds systems where logic meets imagination — a synthesis of science and emotion translated through design and code.</p>
                             <p className="animate-on-scroll" data-anim="left"><a href="/work">Working</a> across artificial intelligence, web development, and digital media, Murtaza focuses on creating meaningful interactions powered by data-driven intelligence and visual storytelling. His work explores how neural networks and generative algorithms can become creative collaborators, rather than mere tools.</p>
                             <p className="animate-on-scroll" data-anim="left">As an AI Model Trainer, he develops and fine-tunes neural architectures for natural language processing, computer vision, and generative systems. His research often investigates the boundaries of creative automation — training models to think, react, and even “improvise” within aesthetic constraints. Using technologies such as TensorFlow, PyTorch, and OpenAI frameworks, he crafts models that blur the line between human intuition and machine precision.</p>
@@ -64,7 +64,7 @@ export default function Home() {
                         <hr className="divider" />
 
                         <div className="InfoAwards">
-                            <h2>- [Awards] -</h2>
+                            <h2 className="animate-on-scroll" data-anim="left">- [Awards] -</h2>
                             <div className="BoxAwards">
                                 <div className="animate-on-scroll" data-anim="right">
                                     <Image className="AwImg" src={Img1} alt="Cannes Gold" loading="lazy" />
@@ -112,7 +112,7 @@ export default function Home() {
                         <hr className="divider" />
 
                         <div className="InfoCert">
-                            <h2>- [Certificates] -</h2>
+                            <h2 className="animate-on-scroll" data-anim="left">- [Certificates] -</h2>
                             <div className="BoxCert">
                                 <div className="animate-on-scroll" data-anim="right">
                                     <Image className="CertImg" src={Img7} alt="" loading="lazy" />
@@ -132,7 +132,7 @@ export default function Home() {
                         <hr className="divider" />
 
                         <div className="InfoContact animate-on-scroll" data-anim="up">
-                            <h2>- [Contact] -</h2>
+                            <h2 className="animate-on-scroll" data-anim="left">- [Contact] -</h2>
                             <div className="BoxContact">
                                 <a href="https://instagram.com/1nd.z">
                                     <div>
