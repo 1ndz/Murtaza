@@ -133,3 +133,34 @@
     -webkit-user-drag: none;
     filter: invert(1) brightness(2);
 }
+
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* أنواع الاتجاهات */
+[data-anim="left"] {
+    transform: translateX(-60px);
+}
+
+[data-anim="right"] {
+    transform: translateX(60px);
+}
+
+[data-anim="up"] {
+    transform: translateY(50px);
+}
+
+[data-anim="left"].in-view,
+[data-anim="right"].in-view,
+[data-anim="up"].in-view {
+    transform: translate(0, 0);
+}
