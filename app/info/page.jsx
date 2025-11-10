@@ -134,15 +134,21 @@ export default function Home() {
                         <div className="InfoContact animate-on-scroll" data-anim="up">
                             <h2>- [Contact] -</h2>
                             <div className="BoxContact">
-                                <div>
-                                    <Image className="CoImg" src={i1} alt="instagram accout" loading="lazy" />
-                                </div>
-                                <div>
-                                    <Image className="CoImg" src={i2} alt="telegram account" loading="lazy" />
-                                </div>
-                                <div>
-                                    <Image className="CoImg" src={i3} alt="veria website" loading="lazy" />
-                                </div>
+                                <a href="https://instagram.com/1nd.z">
+                                    <div>
+                                        <Image className="CoImg" src={i1} alt="instagram accout" loading="lazy" />
+                                    </div>
+                                </a>
+                                <a href="https://t.me/c2_0r">
+                                    <div>
+                                        <Image className="CoImg" src={i2} alt="telegram account" loading="lazy" />
+                                    </div>
+                                </a>
+                                <a href="https://tv-v.netlify.app">
+                                    <div>
+                                        <Image className="CoImg" src={i3} alt="veria website" loading="lazy" />
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
