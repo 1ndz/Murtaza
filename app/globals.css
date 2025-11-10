@@ -66,35 +66,6 @@ canvas {
     z-index: 0;
 }
 
-/* زر الموسيقى */
-.music-toggle {
-    position: fixed;
-    top: 18px;
-    left: 20px;
-    width: 20px;
-    height: 18px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 10;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-}
-
-.music-toggle .bar {
-    width: 2px;
-    height: 8px;
-    background: #cfcfcf;
-    border-radius: 1px;
-    transition: height 0.15s ease;
-}
-
-.music-toggle:not(.active) .bar {
-    height: 2px !important;
-}
-
 /* النص الرئيسي */
 .overlay {
     position: relative;

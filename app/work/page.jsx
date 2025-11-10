@@ -1,6 +1,7 @@
 "use client";
+import "./work.css"; // <-- مو /work.css، لازم ./ لأنك داخل نفس المجلد
 
-export default function Home() {
+export default function Work() {
     return (
         <div suppressHydrationWarning>
             <div className="box">
@@ -9,7 +10,7 @@ export default function Home() {
                 <div className="overlay">
                     <div className="hero">
                         <h1>WORK</h1>
-                        <p>CREATIVE&nbsp;|&nbsp;TECHNOLOGIST&nbsp;|&nbsp;DEVELOPER</p>
+                        <p>Projects&nbsp;|&nbsp;Collaborations&nbsp;|&nbsp;Explorations</p>
                     </div>
                 </div>
             </div>
