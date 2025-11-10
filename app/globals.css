@@ -14,6 +14,7 @@
 * {
     margin: 0;
     padding: 0;
+    overflow: hidden;
     box-sizing: border-box;
     user-select: none;
     -ms-user-select: none;
@@ -44,6 +45,10 @@ img {
     -webkit-user-drag: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* الحاوية */
 .box {
     position: relative;
@@ -54,6 +59,7 @@ img {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    z-index: 1;
 }
 
 /* الخلفية */

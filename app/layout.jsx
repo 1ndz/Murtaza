@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         document.body.appendChild(three);
 
         // تحميل صوت النقرة مرة وحدة
-        const clickSound = new Audio("/audio/click.mp3");
+        const clickSound = new Audio("/audio/m1.wav");
         clickSound.preload = "auto";
 
         // عند النقر على روابط nav فقط

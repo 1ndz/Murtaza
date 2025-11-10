@@ -1,3 +1,37 @@
-.overlay {
+.WorkOverlay {
     transform: translateY(-42.5%);
+}
+
+.View {
+    width: 95%;
+    height: 75%;
+    position: absolute;
+    background-color: transparent;
+    backdrop-filter: blur(2.5px);
+    padding: 15px 5px;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .item {
+        width: 95%;
+        height: auto;
+        border: 1px solid #444;
+        border-radius: 10px;
+    }
+
+    .img {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+    }
+
+    h2 {
+        font-size: 18px;
+        text-align: left;
+        color: #444;
+    }
 }
