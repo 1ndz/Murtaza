@@ -103,3 +103,33 @@
     text-align: center;
     font-family: var(--fn3);
 }
+
+
+/* Contact */
+
+.InfoContact {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.BoxContact {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 3;
+    justify-content: space-around;
+    margin-top: 25px;
+    gap: 5px;
+    row-gap: 50px;
+}
+
+.CoImg {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    filter: invert(1) brightness(2);
+}
