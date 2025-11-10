@@ -4,7 +4,7 @@
 }
 
 .Infoer {
-    width: 100%;
+    width: 100dvw;
     height: 94.2%;
     position: absolute;
     padding: 0;
@@ -73,18 +73,26 @@
 .InfoAwards {
     width: 100%;
     height: auto;
+    overflow: hidden;
 }
 
 .BoxAwards {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 25px;
-    grid-column: 3;
     gap: 5px;
     row-gap: 50px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.BoxAwards>div {
+    flex: 1 1 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .AwImg {
@@ -109,18 +117,26 @@
 .InfoCert {
     width: 100%;
     height: auto;
+    overflow: hidden;
 }
 
 .BoxCert {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 25px;
-    grid-column: 3;
     gap: 5px;
     row-gap: 50px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.BoxCert>div {
+    flex: 1 1 calc((100% - 40px) / 2);
+    max-width: calc((100% - 40px) / 2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .CertImg {
@@ -146,19 +162,27 @@
 .InfoContact {
     width: 100%;
     height: auto;
+    overflow: hidden;
     padding-bottom: 50px;
 }
 
 .BoxContact {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 25px;
-    grid-column: 3;
     gap: 5px;
     row-gap: 50px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.BoxContact>div {
+    flex: 1 1 calc((100% - 40px) / 3);
+    max-width: calc((100% - 40px) / 3);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .CoImg {
