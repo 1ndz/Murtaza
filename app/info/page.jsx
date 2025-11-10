@@ -1,7 +1,5 @@
 "use client";
 import "./info.css";
-import Image from "next/image";
-import InfoImg from "./img/image.webp";
 
 export default function Home() {
     return (
@@ -17,7 +15,6 @@ export default function Home() {
                 </div>
 
                 <div className="InfoView">
-                    {/* <Image src={InfoImg} alt="Info Murtaza" className="InfoImg" /> */}
                     <h2>- [BIO] -</h2>
                     <div className="InfoBio">
                         <p>Murtaza Al-Omran is a multidisciplinary AI Developer, Full-Stack Engineer, and Creative Technologist from southern Iraq, blending code, art, and cognition into seamless digital experiences. With over four years of professional experience, he builds systems where logic meets imagination — a synthesis of science and emotion translated through design and code.</p>
@@ -30,9 +27,9 @@ export default function Home() {
                         <p>He has collaborated with various independent developers, digital artists, and early-stage startups, helping design data-driven interfaces and AI-enhanced products. Each project reflects his belief that technology should feel alive — intuitive, adaptive, and emotionally aware.</p>
                         <p>Currently, Murtaza is working on several projects involving AI-assisted design, generative storytelling, and real-time visual systems, merging human creativity with algorithmic logic. His ultimate goal: to build a new generation of digital experiences where artificial intelligence isn’t an imitation of humanity, but an extension of it.</p>
                     </div>
-                    <div className="InfoAwards">
+                    {/* <div className="InfoAwards">
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
