@@ -2,8 +2,11 @@
 import { useEffect } from "react";
 import "./globals.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({ children }) {
+    const pathname = usePathname();
+
     useEffect(() => {
         // منع التحميل المكرر
         if (window.__fxLoaded) return;
@@ -16,7 +19,7 @@ export default function RootLayout({ children }) {
         document.body.appendChild(three);
 
         // تحميل صوت النقرة مرة وحدة
-        const clickSound = new Audio("/audio/m1.mp3");
+        const clickSound = new Audio("/audio/click.mp3");
         clickSound.preload = "auto";
 
         // عند النقر على روابط nav فقط
@@ -29,10 +32,7 @@ export default function RootLayout({ children }) {
         };
 
         document.addEventListener("click", handleClick);
-
-        return () => {
-            document.removeEventListener("click", handleClick);
-        };
+        return () => document.removeEventListener("click", handleClick);
     }, []);
 
     return (
@@ -42,11 +42,11 @@ export default function RootLayout({ children }) {
                     <canvas id="fx"></canvas>
 
                     <nav>
-                        <Link href="/">HOME</Link>
-                        <Link href="/work">WORK</Link>
-                        <Link href="/art">ART</Link>
-                        <Link href="/info">INFO</Link>
-                        <Link href="/reel">REEL</Link>
+                        <Link href="/" className={pathname === "/" ? "active" : ""}>HOME</Link>
+                        <Link href="/work" className={pathname === "/work" ? "active" : ""}>WORK</Link>
+                        <Link href="/art" className={pathname === "/art" ? "active" : ""}>ART</Link>
+                        <Link href="/info" className={pathname === "/info" ? "active" : ""}>INFO</Link>
+                        <Link href="/reel" className={pathname === "/reel" ? "active" : ""}>REEL</Link>
                     </nav>
 
                     <main>{children}</main>
