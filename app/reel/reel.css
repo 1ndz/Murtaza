@@ -1,0 +1,10 @@
+.ReelBox {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+
+.ReelOverlay {
+    height: auto;
+    position: absolute;
+    top: 5%;
+}

@@ -1,0 +1,45 @@
+.InfoBox {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+
+.InfoOverlay {
+    height: auto;
+    position: absolute;
+    top: 5%;
+}
+
+.InfoView {
+    width: 95%;
+    height: 75%;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    overflow: scroll;
+    flex-wrap: wrap;
+    padding: 15px 5px;
+    margin: 0;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* .InfoImg {
+    width: auto;
+    height: 210px;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+} */
+
+.InfoView h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-family: var(--fn1);
+    color: #c4c4c4;
+}

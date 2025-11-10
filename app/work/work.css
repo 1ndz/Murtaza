@@ -4,31 +4,38 @@
 }
 
 .WorkOverlay {
-    transform: translateY(-42.5%);
+    height: auto;
+    position: absolute;
+    top: 5%;
 }
 
 .View {
     width: 95%;
     height: 75%;
     position: absolute;
+    font-family: var(--fn1);
     justify-content: center;
+    display: inline-block;
     text-align: center;
+    flex-wrap: wrap;
+    overflow: scroll;
     padding: 15px 5px;
     margin: 0;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     .item {
         width: 95%;
         height: 210px;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
-        box-shadow:
-            -6px 6px 12px rgba(0, 0, 0, 0.6),
-            2px -2px 4px rgba(255, 255, 255, 0.08);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .item:hover {

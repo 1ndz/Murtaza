@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Changa:wght@200..800&family=Fustat:wght@200..800&family=Markazi+Text:wght@400..700&display=swap');
+
 :root {
+    --fn1: "Changa", sans-serif;
+    --fn2: "Aref Ruqaa Ink", serif;
+    --fn3: "Fustat", sans-serif;
+    --fn4: "Markazi Text", serif;
+
     --bg1: #0c0218;
     --bg2: #000000;
     --fg: #f5e9ff;
@@ -14,7 +21,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     box-sizing: border-box;
     user-select: none;
     -ms-user-select: none;

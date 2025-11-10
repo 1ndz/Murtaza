@@ -1,12 +1,13 @@
 "use client";
+import "./art.css";
 
 export default function Home() {
     return (
         <div suppressHydrationWarning>
-            <div className="box">
+            <div className="box ArtBox">
                 <canvas id="fx"></canvas>
 
-                <div className="overlay">
+                <div className="overlay ArtOverlay">
                     <div className="hero">
                         <h1>ART</h1>
                         <p>CREATIVE&nbsp;|&nbsp;TECHNOLOGIST&nbsp;|&nbsp;DEVELOPER</p>
