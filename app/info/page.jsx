@@ -39,9 +39,9 @@ export default function Home() {
             <div className="box InfoBox">
                 <canvas id="fx"></canvas>
 
-                <div className="Infoer animate-on-scroll" data-anim="left">
+                <div className="Infoer">
                     <div className="overlay InfoOverlay">
-                        <div>
+                        <div className="hero animate-on-scroll" data-anim="left">
                             <h1>INFO</h1>
                             <p>CREATIVE&nbsp;|&nbsp;TECHNOLOGIST&nbsp;|&nbsp;DEVELOPER</p>
                         </div>
