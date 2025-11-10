@@ -8,6 +8,7 @@ import Img2 from "./img/img2.webp";
 import Img4 from "./img/img4.webp";
 import Img5 from "./img/img5.webp";
 import Img6 from "./img/img6.webp";
+import Img7 from "./img/img7.webp";
 import Img3 from "./img/img3.svg";
 
 import i1 from "./icon/i1.webp";
@@ -104,6 +105,21 @@ export default function Home() {
                                 <div className="animate-on-scroll" data-anim="right">
                                     <Image className="AwImg" src={Img2} alt="Cutting Edge of the Week" loading="lazy" />
                                     <h3>Cutting Edge of the Week</h3>
+                                </div>
+
+                                <hr className="slider" />
+
+                                <div className="animate-on-scroll" data-anim="right">
+                                    <Image className="AwImg" src={Img7} alt="" loading="lazy" />
+                                    <h3>Deep Learning Engineer</h3>
+                                </div>
+                                <div className="animate-on-scroll" data-anim="right">
+                                    <Image className="AwImg" src={Img7} alt="" loading="lazy" />
+                                    <h3>Machine Learning Engineer</h3>
+                                </div>
+                                <div className="animate-on-scroll" data-anim="right">
+                                    <Image className="AwImg" src={Img7} alt="" loading="lazy" />
+                                    <h3>Quantitative Analyst</h3>
                                 </div>
                             </div>
                         </div>

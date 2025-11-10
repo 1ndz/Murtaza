@@ -157,3 +157,12 @@ nav a.active {
     background: linear-gradient(to right, transparent, #c86bfa, transparent);
     opacity: 0.6;
 }
+
+.slider {
+    width: 90%;
+    margin: 2rem auto;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #4023e4, transparent);
+    opacity: 0.6;
+}
