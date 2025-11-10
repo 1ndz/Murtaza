@@ -173,7 +173,7 @@
 
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
     transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
@@ -184,15 +184,15 @@
 
 /* أنواع الاتجاهات */
 [data-anim="left"] {
-    transform: translateX(-60px);
+    transform: translateX(-40px);
 }
 
 [data-anim="right"] {
-    transform: translateX(60px);
+    transform: translateX(40px);
 }
 
 [data-anim="up"] {
-    transform: translateY(50px);
+    transform: translateY(30px);
 }
 
 [data-anim="left"].in-view,
