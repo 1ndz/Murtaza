@@ -38,8 +38,16 @@
 
 .InfoView h2 {
     width: 100%;
-    text-align: center;
     font-size: 12px;
-    font-family: var(--fn1);
     color: #c4c4c4;
+    text-align: center;
+    font-family: var(--fn1);
+}
+
+.InfoView p {
+    width: 100%;
+    font-size: 10px;
+    text-align: left;
+    color: #c4c4c4;
+    font-family: var(--fn1);
 }
