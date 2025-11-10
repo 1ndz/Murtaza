@@ -2,6 +2,10 @@
 import "./info.css";
 import Image from "next/image";
 import Img1 from "./img/img1.webp";
+import Img2 from "./img/img2.webp";
+import Img4 from "./img/img4.webp";
+import Img5 from "./img/img5.webp";
+import Img6 from "./img/img6.webp";
 import Img3 from "./img/img3.svg";
 
 export default function Home() {
@@ -41,24 +45,40 @@ export default function Home() {
                                     <h2>Cannes Gold X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img1} alt="Cannes Gold" />
+                                    <Image className="AwImg" src={Img1} alt="Cannes Silver" />
                                     <h2>Cannes Silver</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img1} alt="Cannes Gold" />
+                                    <Image className="AwImg" src={Img1} alt="Cannes Bronze" />
                                     <h2>Cannes Bronze X4</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix" />
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - DDS" />
                                     <h2>Red Dot - DDS</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix" />
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix X2" />
                                     <h2>Red Dot - Gran Prix X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix" />
+                                    <Image className="AwImg" src={Img3} alt="Red Dot X5" />
                                     <h2>Red Dot - X5</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img4} alt="Gold Website - X2" />
+                                    <h2>Gold Website - X2</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img5} alt="The Webby Website - X2" />
+                                    <h2>The Webby Website - X2</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img6} alt="Craft Website Design Merit" />
+                                    <h2>Craft Website Design Merit</h2>
+                                </div>
+                                <div>
+                                    <Image className="AwImg" src={Img2} alt="TCutting Edge of the Week" />
+                                    <h2>Cutting Edge of the Week</h2>
                                 </div>
                             </div>
                         </div>
