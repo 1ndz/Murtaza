@@ -37,6 +37,8 @@ export default function Home() {
                             <p>Currently, Murtaza is working on several projects involving AI-assisted design, generative storytelling, and real-time visual systems, merging human creativity with algorithmic logic. His ultimate goal: to build a new generation of digital experiences where artificial intelligence isn’t an imitation of humanity, but an extension of it.</p>
                         </div>
 
+                        <hr class="divider" />
+
                         <div className="InfoAwards">
                             <h2>- [Awards] -</h2>
                             <div className="BoxAwards">

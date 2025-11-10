@@ -147,3 +147,12 @@ nav a.active {
     background: rgba(255, 90, 200, .15);
     transform: translateY(-2px);
 }
+
+.divider {
+    width: 90%;
+    margin: 2rem auto;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c86bfa, transparent);
+    opacity: 0.6;
+}
