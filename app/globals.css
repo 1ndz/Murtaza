@@ -69,10 +69,10 @@ a {
 
 /* الحاوية */
 .box {
-    position: relative;
     width: 100dvw;
     height: 100dvh;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
