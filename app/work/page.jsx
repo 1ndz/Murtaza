@@ -17,7 +17,7 @@ export default function Work() {
                 </div>
 
                 <div className="View">
-                    <a href="./movies">
+                    <a href="./work/movies">
                         <div className="item">
                             <Image src={moviesImg} alt="App Movies" className="img" />
                             <h2>Veria TV</h2>
