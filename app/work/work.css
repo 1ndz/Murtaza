@@ -28,8 +28,8 @@
     -ms-overflow-style: none;
 
     .item {
-        width: 95%;
-        height: 210px;
+        width: 100%;
+        height: 180px;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -48,7 +48,7 @@
 
     .img {
         width: 100%;
-        height: 210px;
+        height: 180px;
         object-fit: cover;
         pointer-events: none;
         -webkit-user-drag: none;
