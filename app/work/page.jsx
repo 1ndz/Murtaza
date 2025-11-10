@@ -14,9 +14,13 @@ export default function Work() {
                     </div>
                 </div>
                 <div className="View">
-                    <div className="item">
-                        <img src="./img/movies.webp" alt="App Movies" />
-                    </div>
+                    <a href="./movies">
+                        <div className="item">
+                            <img src="./img/movies.webp" alt="App Movies" />
+                            <h2>Veria TV</h2>
+                            <p>A modern platform for exploring movies and TV series</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
