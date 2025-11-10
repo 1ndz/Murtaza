@@ -46,43 +46,43 @@ export default function Home() {
                             <h2>- [Certificates | Awards] -</h2>
                             <div className="BoxAwards">
                                 <div>
-                                    <Image className="AwImg" src={Img1} alt="Cannes Gold" />
+                                    <Image className="AwImg" src={Img1} alt="Cannes Gold" loading="lazy" />
                                     <h2>Cannes Gold X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img1} alt="Cannes Silver" />
+                                    <Image className="AwImg" src={Img1} alt="Cannes Silver" loading="lazy" />
                                     <h2>Cannes Silver</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img1} alt="Cannes Bronze" />
+                                    <Image className="AwImg" src={Img1} alt="Cannes Bronze" loading="lazy" />
                                     <h2>Cannes Bronze X4</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img3} alt="Red Dot - DDS" />
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - DDS" loading="lazy" />
                                     <h2>Red Dot - DDS</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix X2" />
+                                    <Image className="AwImg" src={Img3} alt="Red Dot - Gran Prix X2" loading="lazy" />
                                     <h2>Red Dot - Gran Prix X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img3} alt="Red Dot X5" />
+                                    <Image className="AwImg" src={Img3} alt="Red Dot X5" loading="lazy" />
                                     <h2>Red Dot - X5</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img4} alt="Gold Website - X2" />
+                                    <Image className="AwImg" src={Img4} alt="Gold Website - X2" loading="lazy" />
                                     <h2>Gold Website - X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img5} alt="The Webby Website - X2" />
+                                    <Image className="AwImg" src={Img5} alt="The Webby Website - X2" loading="lazy" />
                                     <h2>The Webby Website - X2</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img6} alt="Craft Website Design Merit" />
+                                    <Image className="AwImg" src={Img6} alt="Craft Website Design Merit" loading="lazy" />
                                     <h2>Craft Website Design Merit</h2>
                                 </div>
                                 <div>
-                                    <Image className="AwImg" src={Img2} alt="TCutting Edge of the Week" />
+                                    <Image className="AwImg" src={Img2} alt="TCutting Edge of the Week" loading="lazy" />
                                     <h2>Cutting Edge of the Week</h2>
                                 </div>
                             </div>
@@ -94,13 +94,13 @@ export default function Home() {
                             <h2>- [Contact] -</h2>
                             <div className="BoxContact">
                                 <div>
-                                    <Image className="CoImg" src={i1} alt="instagram accout" />
+                                    <Image className="CoImg" src={i1} alt="instagram accout" loading="lazy" />
                                 </div>
                                 <div>
-                                    <Image className="CoImg" src={i2} alt="telegram account" />
+                                    <Image className="CoImg" src={i2} alt="telegram account" loading="lazy" />
                                 </div>
                                 <div>
-                                    <Image className="CoImg" src={i3} alt="veria website" />
+                                    <Image className="CoImg" src={i3} alt="veria website" loading="lazy" />
                                 </div>
                             </div>
                         </div>
