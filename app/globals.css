@@ -127,7 +127,7 @@ canvas {
     margin: 2px auto;
     position: fixed;
     border: none;
-    bottom: 55px;
+    bottom: 5.5%;
     left: 0;
     right: 0;
     z-index: 5;
@@ -138,9 +138,10 @@ canvas {
 
 nav {
     position: fixed;
-    bottom: 20px;
+    bottom: 2%;
     left: 0;
     right: 0;
+    height: 3%;
     display: flex;
     justify-content: center;
     font-family: var(--fn3);
@@ -149,6 +150,7 @@ nav {
 }
 
 nav a {
+    height: 30px;
     pointer-events: auto;
     text-decoration: none;
     font-size: .6rem;
