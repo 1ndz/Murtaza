@@ -60,7 +60,7 @@
         color: #fff;
         padding: 0;
         padding-left: 7.5px;
-        transform: translateY(-77.5px);
+        transform: translateY(-75px);
     }
 
     p {
@@ -70,6 +70,6 @@
         color: #c4c4c4;
         padding: 0;
         padding-left: 7.5px;
-        transform: translateY(-77.5px);
+        transform: translateY(-75px);
     }
 }
