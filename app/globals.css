@@ -79,7 +79,7 @@ a {
 canvas {
     position: fixed;
     inset: 0;
-    width: 100%;
+    width: 100dvw;
     height: 100%;
     display: block;
     z-index: 0;
