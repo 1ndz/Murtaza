@@ -6,7 +6,7 @@ import moviesImg from "./img/movies.webp";
 export default function Work() {
     return (
         <div suppressHydrationWarning>
-            <div className="box">
+            <div className="box WorkBox">
                 <canvas id="fx"></canvas>
 
                 <div className="overlay WorkOverlay">
