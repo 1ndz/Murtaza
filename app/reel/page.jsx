@@ -37,7 +37,6 @@ export default function Home() {
                     <div className="ReelView">
                         <div className="ReelVideos">
                             <h2 className="animate-on-scroll" data-anim="left">- [Storys] -</h2>
-                            <iframe src="https://player.vimeo.com/video/1136621399?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="400" height="300" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="instagram1"></iframe>
                         </div>
                     </div>
                 </div>
