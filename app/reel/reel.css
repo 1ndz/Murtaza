@@ -3,8 +3,93 @@
     backdrop-filter: blur(5px);
 }
 
+.Reeler {
+    width: 100dvw;
+    height: 94.2%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    inset: 0;
+    overflow: scroll;
+}
+
 .ReelOverlay {
+    width: 100%;
     height: auto;
     position: absolute;
     top: 5%;
+}
+
+.ReelView {
+    width: 95%;
+    height: 72.5%;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    gap: 50px;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ReelVideos {
+    width: 100%;
+    height: auto;
+}
+
+.ReelView h2 {
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #9c9c9c;
+    text-align: center;
+    font-family: var(--fn3);
+}
+
+/* .ReelView p {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    color: #e4e4e4;
+    font-family: var(--fn3);
+    padding-bottom: 7.5px;
+}
+
+.ReelView a {
+    font-weight: bold;
+    color: #b3b3b3;
+} */
+
+
+/* animate-on-scroll */
+
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* أنواع الاتجاهات */
+[data-anim="left"] {
+    transform: translateX(-40px);
+}
+
+[data-anim="right"] {
+    transform: translateX(40px);
+}
+
+[data-anim="left"].in-view,
+[data-anim="right"].in-view {
+    transform: translate(0, 0);
 }
