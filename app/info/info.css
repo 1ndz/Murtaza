@@ -197,7 +197,6 @@
 
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
     transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
@@ -215,12 +214,7 @@
     transform: translateX(40px);
 }
 
-[data-anim="up"] {
-    transform: translateY(30px);
-}
-
 [data-anim="left"].in-view,
-[data-anim="right"].in-view,
-[data-anim="up"].in-view {
+[data-anim="right"].in-view {
     transform: translate(0, 0);
 }

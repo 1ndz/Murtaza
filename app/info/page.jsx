@@ -131,7 +131,7 @@ export default function Home() {
 
                         <hr className="divider" />
 
-                        <div className="InfoContact animate-on-scroll" data-anim="up">
+                        <div className="InfoContact animate-on-scroll" data-anim="left">
                             <h2 className="animate-on-scroll" data-anim="left">- [Contact] -</h2>
                             <div className="BoxContact">
                                 <a href="https://instagram.com/1nd.z">
