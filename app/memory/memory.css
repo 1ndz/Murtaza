@@ -1,9 +1,9 @@
-.ArtBox {
+.MemoryBox {
     background-color: transparent;
     backdrop-filter: blur(5px);
 }
 
-.ArtOverlay {
+.MemoryOverlay {
     height: auto;
     position: absolute;
     top: 5%;

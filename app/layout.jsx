@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
                     <nav>
                         <Link href="/" className={pathname === "/" ? "active" : ""}>HOME</Link>
                         <Link href="/work" className={pathname === "/work" ? "active" : ""}>WORK</Link>
-                        <Link href="/art" className={pathname === "/art" ? "active" : ""}>ART</Link>
+                        <Link href="/memory" className={pathname === "/memory" ? "active" : ""}>MEMORY</Link>
                         <Link href="/info" className={pathname === "/info" ? "active" : ""}>INFO</Link>
                         <Link href="/reel" className={pathname === "/reel" ? "active" : ""}>REEL</Link>
                     </nav>

@@ -1,16 +1,16 @@
 "use client";
-import "./art.css";
+import "./memory.css";
 
 export default function Home() {
     return (
         <div suppressHydrationWarning>
-            <div className="box ArtBox">
+            <div className="box MemoryBox">
                 <canvas id="fx"></canvas>
 
-                <div className="overlay ArtOverlay">
+                <div className="overlay MemoryOverlay">
                     <div className="hero">
-                        <h1>ART</h1>
-                        <p>CREATIVE&nbsp;|&nbsp;TECHNOLOGIST&nbsp;|&nbsp;DEVELOPER</p>
+                        <h1>MEMORY</h1>
+                        {/* <p>CREATIVE&nbsp;|&nbsp;TECHNOLOGIST&nbsp;|&nbsp;DEVELOPER</p> */}
                     </div>
                 </div>
             </div>
