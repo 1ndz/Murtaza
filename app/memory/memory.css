@@ -3,8 +3,110 @@
     backdrop-filter: blur(5px);
 }
 
+.Memoryer {
+    width: 100dvw;
+    height: 94.2%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    inset: 0;
+    overflow: scroll;
+}
+
 .MemoryOverlay {
+    width: 100%;
     height: auto;
     position: absolute;
     top: 5%;
+}
+
+.MemoryView {
+    width: 95%;
+    height: 72.5%;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    gap: 50px;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* .Memory Card Dynamic */
+
+.m-card {
+    width: 90%;
+    max-width: 420px;
+    padding: 18px 20px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.m-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* الخط العمودي */
+.m-line {
+    width: 4px;
+    border-radius: 10px;
+    background: var(--line-color);
+    box-shadow: 0 0 20px var(--line-glow);
+}
+
+/* النص */
+.m-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.m-text {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* أحوال الألوان */
+.type-red {
+    --line-color: #ff3c3c;
+    --line-glow: rgba(255, 60, 60, 0.6);
+}
+
+.type-green {
+    --line-color: #2aff7a;
+    --line-glow: rgba(42, 255, 122, 0.5);
+}
+
+.type-yellow {
+    --line-color: #ffe34f;
+    --line-glow: rgba(255, 227, 79, 0.5);
+}
+
+.type-blue {
+    --line-color: #3f8bff;
+    --line-glow: rgba(63, 139, 255, 0.5);
+}
+
+.type-purple {
+    --line-color: #c665ff;
+    --line-glow: rgba(198, 101, 255, 0.55);
 }
