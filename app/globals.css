@@ -151,7 +151,7 @@ nav {
 
 nav a {
     height: 30px;
-    line-height: auto;
+    line-height: 17.5px;
     pointer-events: auto;
     text-decoration: none;
     font-size: .6rem;
