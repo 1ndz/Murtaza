@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import useStableReveal from "./useStableReveal";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const NAV_ITEMS = [
     { href: "/", label: "HOME" },

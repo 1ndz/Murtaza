@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./work.css";
 import moviesImg from "./img/movies.webp";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const storyboardMoments = [
     {

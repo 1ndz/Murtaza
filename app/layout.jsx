@@ -1,5 +1,6 @@
 import "./globals.css";
 import SiteShell from "./SiteShell";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
     title: "Murtaza Al-Omran",

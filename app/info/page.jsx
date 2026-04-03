@@ -1,5 +1,6 @@
 import "./info.css";
 import Image from "next/image";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import Img1 from "./img/img1.webp";
 import Img2 from "./img/img2.webp";
