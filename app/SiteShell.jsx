@@ -1,59 +1,63 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import useStableReveal from "./useStableReveal";
 
-const ROUTE_QUEUE = ["/", "/work", "/memory", "/info", "/reel", "/work/movies"];
-const ASSET_QUEUE = ["/js/three.js", "/audio/m1.wav"];
+const NAV_ITEMS = [
+    { href: "/", label: "HOME" },
+    { href: "/work", label: "WORK" },
+    { href: "/memory", label: "MEMORY" },
+    { href: "/info", label: "INFO" },
+    { href: "/reel", label: "REEL" }
+];
 
-function warmAsset(href) {
-    if (href.endsWith(".wav")) {
-        const audio = new Audio();
-        audio.preload = "auto";
-        audio.src = href;
-        return;
+function ensureClickSound() {
+    if (typeof window === "undefined") return null;
+
+    if (!window.__siteClickSound) {
+        const clickSound = new Audio("/audio/m1.wav");
+        clickSound.preload = "auto";
+        window.__siteClickSound = clickSound;
     }
 
-    fetch(href).catch(() => null);
-}
-
-function warmSite(router) {
-    const run = () => {
-        ROUTE_QUEUE.forEach((href) => {
-            try {
-                router.prefetch(href);
-            } catch { }
-        });
-
-        ASSET_QUEUE.forEach((href) => warmAsset(href));
-    };
-
-    if (typeof window.requestIdleCallback === "function") {
-        window.requestIdleCallback(run, { timeout: 1400 });
-        return;
-    }
-
-    setTimeout(run, 220);
+    return window.__siteClickSound;
 }
 
 export default function SiteShell({ children }) {
     const pathname = usePathname();
     const router = useRouter();
+    const prefetchedRoutes = useRef(new Set());
 
-    const navItems = useMemo(
-        () => [
-            { href: "/", label: "HOME" },
-            { href: "/work", label: "WORK" },
-            { href: "/memory", label: "MEMORY" },
-            { href: "/info", label: "INFO" },
-            { href: "/reel", label: "REEL" }
-        ],
-        []
-    );
+    useStableReveal(".animate-on-scroll", pathname);
+
+    const prefetchRoute = (href) => {
+        if (!href || !href.startsWith("/") || prefetchedRoutes.current.has(href)) return;
+
+        prefetchedRoutes.current.add(href);
+
+        try {
+            router.prefetch(href);
+        } catch { }
+    };
+
+    const handleNavIntent = (event) => {
+        prefetchRoute(event.currentTarget.getAttribute("href"));
+    };
 
     useEffect(() => {
-        if (!window.__fxLoaded) {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const shouldSkipFx =
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches || Boolean(connection?.saveData);
+        let idleId;
+        let timeoutId;
+
+        const loadFx = () => {
+            if (shouldSkipFx || window.__fxLoaded || document.querySelector('script[data-site-fx="true"]')) {
+                return;
+            }
+
             window.__fxLoaded = true;
 
             const three = document.createElement("script");
@@ -61,28 +65,50 @@ export default function SiteShell({ children }) {
             three.async = true;
             three.dataset.siteFx = "true";
             document.body.appendChild(three);
+        };
+
+        if (!shouldSkipFx) {
+            if (typeof window.requestIdleCallback === "function") {
+                idleId = window.requestIdleCallback(loadFx, { timeout: 2200 });
+            } else {
+                timeoutId = window.setTimeout(loadFx, 900);
+            }
         }
 
-        if (!window.__siteClickSound) {
-            const clickSound = new Audio("/audio/m1.wav");
-            clickSound.preload = "auto";
-            window.__siteClickSound = clickSound;
-        }
+        const primeSound = () => {
+            ensureClickSound();
+        };
 
         const handleClick = (event) => {
             const link = event.target.closest("a");
-            if (!link || !window.__siteClickSound) return;
+            if (!link) return;
 
-            window.__siteClickSound.currentTime = 0;
-            window.__siteClickSound.play().catch(() => { });
+            prefetchRoute(link.getAttribute("href"));
+
+            const clickSound = ensureClickSound();
+            if (!clickSound) return;
+
+            clickSound.currentTime = 0;
+            clickSound.play().catch(() => { });
         };
 
+        document.addEventListener("pointerdown", primeSound, { passive: true, capture: true, once: true });
+        document.addEventListener("keydown", primeSound, { capture: true, once: true });
         document.addEventListener("click", handleClick);
-        return () => document.removeEventListener("click", handleClick);
-    }, []);
 
-    useEffect(() => {
-        warmSite(router);
+        return () => {
+            if (typeof window.cancelIdleCallback === "function" && idleId) {
+                window.cancelIdleCallback(idleId);
+            }
+
+            if (timeoutId) {
+                window.clearTimeout(timeoutId);
+            }
+
+            document.removeEventListener("pointerdown", primeSound, true);
+            document.removeEventListener("keydown", primeSound, true);
+            document.removeEventListener("click", handleClick);
+        };
     }, [router]);
 
     return (
@@ -92,11 +118,15 @@ export default function SiteShell({ children }) {
             <hr className="NavDivider" />
 
             <nav>
-                {navItems.map((item) => (
+                {NAV_ITEMS.map((item) => (
                     <Link
                         key={item.href}
                         href={item.href}
+                        prefetch={false}
                         className={pathname === item.href ? "active" : ""}
+                        onMouseEnter={handleNavIntent}
+                        onFocus={handleNavIntent}
+                        onTouchStart={handleNavIntent}
                     >
                         {item.label}
                     </Link>

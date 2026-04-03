@@ -2,68 +2,106 @@
 
 import { useEffect } from "react";
 
-export default function useStableReveal(selector = ".animate-on-scroll") {
+const REVEAL_START_LINE = 1;
+const OBSERVER_BOTTOM_MARGIN = "0px";
+
+export default function useStableReveal(selector = ".animate-on-scroll", refreshKey = selector) {
     useEffect(() => {
         const elements = Array.from(document.querySelectorAll(selector));
         if (!elements.length) return;
 
-        const root = document.documentElement;
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const pending = new Set();
+        let rafId = 0;
+        let observer;
+        let listenersAttached = false;
+
+        const detachListeners = () => {
+            if (!listenersAttached) return;
+
+            document.removeEventListener("scroll", scheduleReveal, true);
+            window.removeEventListener("resize", scheduleReveal);
+            listenersAttached = false;
+        };
+
+        const markVisible = (element) => {
+            if (!pending.has(element)) return;
+
+            element.classList.add("in-view");
+            pending.delete(element);
+
+            if (observer) {
+                observer.unobserve(element);
+            }
+
+            if (!pending.size) {
+                detachListeners();
+            }
+        };
 
         if (prefersReducedMotion) {
-            elements.forEach((element) => element.classList.add("in-view"));
+            elements.forEach((element) => element.classList.add("reveal-ready", "in-view"));
             return;
         }
 
-        let rafId = 0;
         const revealVisible = () => {
-            const viewportHeight = window.innerHeight;
+            const triggerLine = window.innerHeight * REVEAL_START_LINE;
 
-            elements.forEach((element) => {
-                if (element.classList.contains("in-view")) return;
-
+            pending.forEach((element) => {
                 const rect = element.getBoundingClientRect();
-                if (rect.top <= viewportHeight * 0.9 && rect.bottom >= viewportHeight * 0.08) {
-                    element.classList.add("in-view");
+                if (rect.top <= triggerLine && rect.bottom >= 0) {
+                    markVisible(element);
                 }
             });
         };
 
+        elements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * REVEAL_START_LINE && rect.bottom >= 0) {
+                element.classList.add("in-view");
+            } else {
+                pending.add(element);
+            }
+
+            element.classList.add("reveal-ready");
+        });
+
+        if (!pending.size) return;
+
         const scheduleReveal = () => {
+            if (!pending.size) return;
+
             window.cancelAnimationFrame(rafId);
             rafId = window.requestAnimationFrame(revealVisible);
         };
 
-        root.classList.add("reveal-active");
-        rafId = window.requestAnimationFrame(revealVisible);
+        document.addEventListener("scroll", scheduleReveal, { passive: true, capture: true });
+        window.addEventListener("resize", scheduleReveal, { passive: true });
+        listenersAttached = true;
 
-        const observer = new IntersectionObserver(
+        observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (!entry.isIntersecting) return;
-                    entry.target.classList.add("in-view");
-                    observer.unobserve(entry.target);
+                    markVisible(entry.target);
                 });
             },
             {
-                threshold: 0.12,
-                rootMargin: "0px 0px -8% 0px"
+                threshold: 0,
+                rootMargin: `0px 0px ${OBSERVER_BOTTOM_MARGIN} 0px`
             }
         );
 
-        elements.forEach((element) => {
-            if (element.classList.contains("in-view")) return;
+        pending.forEach((element) => {
             observer.observe(element);
         });
 
-        document.addEventListener("scroll", scheduleReveal, { passive: true, capture: true });
-        window.addEventListener("resize", scheduleReveal, { passive: true });
+        scheduleReveal();
 
         return () => {
+            detachListeners();
             observer.disconnect();
             window.cancelAnimationFrame(rafId);
-            document.removeEventListener("scroll", scheduleReveal, true);
-            window.removeEventListener("resize", scheduleReveal);
         };
-    }, [selector]);
+    }, [selector, refreshKey]);
 }

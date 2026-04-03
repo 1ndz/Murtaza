@@ -733,27 +733,6 @@
     --card-accent: rgba(245, 233, 255, 0.56);
 }
 
-.animate-on-scroll {
-    opacity: 1;
-    transform: none;
-    transition: opacity 0.24s ease, transform 0.24s ease;
-    will-change: auto;
-}
-
-.animate-on-scroll.in-view {
-    opacity: 1;
-    transform: none;
-    will-change: auto;
-}
-
-[data-anim="left"] {
-    transform: none;
-}
-
-[data-anim="right"] {
-    transform: none;
-}
-
 @keyframes mediaFloat {
     from {
         transform: scale(1.02) translate3d(0, 0, 0);

@@ -732,25 +732,25 @@ nav a.active {
     clip-path: inset(0 0 0 0);
 }
 
-html.reveal-active .animate-on-scroll {
+.animate-on-scroll.reveal-ready {
     transition:
         opacity 0.82s cubic-bezier(0.22, 1, 0.36, 1),
         transform 0.96s cubic-bezier(0.22, 1, 0.36, 1),
         filter 0.96s cubic-bezier(0.22, 1, 0.36, 1),
         clip-path 0.92s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: var(--reveal-delay, 0ms);
+    transition-delay: 0ms;
     will-change: transform, opacity, filter, clip-path;
     transform-origin: center center;
 }
 
-html.reveal-active .animate-on-scroll:not(.in-view) {
+.animate-on-scroll.reveal-ready:not(.in-view) {
     opacity: 0.001;
     filter: blur(20px);
     transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 30px), 0) rotate(var(--reveal-rotate, 0deg)) scale(0.965);
     pointer-events: none;
 }
 
-html.reveal-active .animate-on-scroll.in-view {
+.animate-on-scroll.reveal-ready.in-view {
     opacity: 1;
     filter: blur(0);
     transform: none;
@@ -759,19 +759,19 @@ html.reveal-active .animate-on-scroll.in-view {
     will-change: auto;
 }
 
-html.reveal-active [data-anim="left"]:not(.in-view) {
+.animate-on-scroll.reveal-ready[data-anim="left"]:not(.in-view) {
     --reveal-x: -48px;
     --reveal-y: 8px;
     --reveal-rotate: -1.6deg;
 }
 
-html.reveal-active [data-anim="right"]:not(.in-view) {
+.animate-on-scroll.reveal-ready[data-anim="right"]:not(.in-view) {
     --reveal-x: 48px;
     --reveal-y: 8px;
     --reveal-rotate: 1.6deg;
 }
 
-html.reveal-active [data-anim="write"]:not(.in-view) {
+.animate-on-scroll.reveal-ready[data-anim="write"]:not(.in-view) {
     opacity: 0.01;
     filter: blur(14px);
     transform: translate3d(0, 18px, 0) scale(0.988);
@@ -779,10 +779,10 @@ html.reveal-active [data-anim="write"]:not(.in-view) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    html.reveal-active .animate-on-scroll:not(.in-view),
-    html.reveal-active [data-anim="left"]:not(.in-view),
-    html.reveal-active [data-anim="right"]:not(.in-view),
-    html.reveal-active [data-anim="write"]:not(.in-view) {
+    .animate-on-scroll.reveal-ready:not(.in-view),
+    .animate-on-scroll.reveal-ready[data-anim="left"]:not(.in-view),
+    .animate-on-scroll.reveal-ready[data-anim="right"]:not(.in-view),
+    .animate-on-scroll.reveal-ready[data-anim="write"]:not(.in-view) {
         opacity: 1;
         filter: none;
         transform: none;

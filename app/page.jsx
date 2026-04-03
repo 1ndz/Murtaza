@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import styles from "./page.module.css";
-import useStableReveal from "./useStableReveal";
 
 const signals = [
     {
@@ -22,8 +19,6 @@ const signals = [
 const orbitLabels = ["Model Logic", "Realtime Surface", "Visual Motion", "Neon Systems"];
 
 export default function Home() {
-    useStableReveal();
-
     return (
         <div suppressHydrationWarning>
             <section className={styles.HomeViewport}>
@@ -84,10 +79,10 @@ export default function Home() {
                     </div>
 
                     <div className={`${styles.HomeActions} animate-on-scroll`} style={{ "--reveal-delay": "320ms" }}>
-                        <Link href="/work" className={styles.PrimaryAction}>
+                        <Link href="/work" prefetch={false} className={styles.PrimaryAction}>
                             View work
                         </Link>
-                        <Link href="/info" className={styles.SecondaryAction}>
+                        <Link href="/info" prefetch={false} className={styles.SecondaryAction}>
                             Open info
                         </Link>
                     </div>

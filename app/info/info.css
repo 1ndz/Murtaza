@@ -628,29 +628,6 @@
     text-align: center;
 }
 
-.animate-on-scroll {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    transition: opacity 0.28s ease, transform 0.28s ease, filter 0.28s ease;
-    will-change: auto;
-}
-
-.animate-on-scroll.in-view {
-    opacity: 1;
-    transform: none;
-    filter: blur(0);
-    will-change: auto;
-}
-
-[data-anim="left"] {
-    transform: none;
-}
-
-[data-anim="right"] {
-    transform: none;
-}
-
 @keyframes timelineItemEnter {
     0% {
         opacity: 0;

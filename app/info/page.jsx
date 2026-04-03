@@ -1,8 +1,5 @@
-"use client";
-
 import "./info.css";
 import Image from "next/image";
-import useStableReveal from "../useStableReveal";
 
 import Img1 from "./img/img1.webp";
 import Img2 from "./img/img2.webp";
@@ -121,7 +118,7 @@ function RecognitionField({ items }) {
                                     className={item.kind === "Certificate" ? "CertImg RecognitionImage" : "AwImg RecognitionImage"}
                                     src={item.image}
                                     alt={item.alt || item.title}
-                                    loading="eager"
+                                    sizes="44px"
                                 />
                             </div>
 
@@ -178,7 +175,7 @@ function CredentialDeck({ items }) {
                     </div>
 
                     <div className="CredentialSeal">
-                        <Image className="CertImg CredentialImage" src={item.image} alt={item.title} loading="eager" />
+                        <Image className="CertImg CredentialImage" src={item.image} alt={item.title} sizes="70px" />
                     </div>
                 </article>
             ))}
@@ -187,8 +184,6 @@ function CredentialDeck({ items }) {
 }
 
 export default function Home() {
-    useStableReveal();
-
     return (
         <div suppressHydrationWarning>
             <div className="box InfoBox">
@@ -283,7 +278,7 @@ export default function Home() {
                                             className="ContactLink animate-on-scroll"
                                             data-anim={index % 2 === 0 ? "left" : "right"}
                                         >
-                                            <Image className="CoImg" src={contact.image} alt={contact.alt} loading="eager" />
+                                            <Image className="CoImg" src={contact.image} alt={contact.alt} sizes="48px" />
                                             <div className="ContactMeta">
                                                 <span>{contact.label}</span>
                                                 <strong>{contact.name}</strong>

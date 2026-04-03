@@ -72,28 +72,3 @@
 
 
 /* animate-on-scroll */
-
-.animate-on-scroll {
-    opacity: 1;
-    transform: none;
-    transition: opacity 0.24s ease, transform 0.24s ease;
-}
-
-.animate-on-scroll.in-view {
-    opacity: 1;
-    transform: none;
-}
-
-/* أنواع الاتجاهات */
-[data-anim="left"] {
-    transform: none;
-}
-
-[data-anim="right"] {
-    transform: none;
-}
-
-[data-anim="left"].in-view,
-[data-anim="right"].in-view {
-    transform: none;
-}

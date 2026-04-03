@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import "./work.css";
-import useStableReveal from "../useStableReveal";
 import moviesImg from "./img/movies.webp";
 
 const storyboardMoments = [
@@ -116,8 +113,6 @@ const projectBoard = [
 ];
 
 export default function Work() {
-    useStableReveal();
-
     return (
         <div suppressHydrationWarning>
             <div className="box WorkBox">
@@ -190,7 +185,7 @@ export default function Work() {
                                 </div>
 
                                 <div className="FeatureActions">
-                                    <Link href="/work/movies" className="ActionLink primary">
+                                    <Link href="/work/movies" prefetch={false} className="ActionLink primary">
                                         Open page
                                     </Link>
                                     <a
@@ -295,7 +290,7 @@ export default function Work() {
 
                                             <div className="ProjectActions">
                                                 {project.primaryHref ? (
-                                                    <Link href={project.primaryHref} className="InlineAction">
+                                                    <Link href={project.primaryHref} prefetch={false} className="InlineAction">
                                                         {project.primaryLabel}
                                                     </Link>
                                                 ) : (

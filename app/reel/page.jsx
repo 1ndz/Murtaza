@@ -1,10 +1,6 @@
-"use client";
 import "./reel.css";
-import useStableReveal from "../useStableReveal";
 
 export default function Home() {
-    useStableReveal();
-
     return (
         <div suppressHydrationWarning>
             <div className="box ReelBox">

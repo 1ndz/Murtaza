@@ -1,10 +1,6 @@
-"use client";
 import "./memory.css";
-import useStableReveal from "../useStableReveal";
 
 export default function Home() {
-    useStableReveal();
-
     return (
         <div suppressHydrationWarning>
             <div className="box MemoryBox">
