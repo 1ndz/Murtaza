@@ -1,0 +1,1853 @@
+.InfoBox {
+    background: transparent;
+}
+
+.Infoer {
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(92px, 13vh, 132px) 0 128px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: auto;
+}
+
+.Infoer::-webkit-scrollbar {
+    display: none;
+}
+
+.InfoHero,
+.InfoView {
+    width: min(1080px, 92%);
+    margin: 0 auto;
+}
+
+.InfoHero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: clamp(28px, 4vw, 52px);
+    margin-bottom: 46px;
+    padding-bottom: 32px;
+}
+
+.InfoHero::before,
+.InfoHero::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.InfoHero::before {
+    top: 0;
+    left: 0;
+    width: min(180px, 34%);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(57, 74, 228, 0.82), rgba(200, 107, 250, 0.82), transparent);
+}
+
+.InfoHero::after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(57, 74, 228, 0.42), rgba(255, 255, 255, 0.08), transparent);
+}
+
+.InfoEyebrow,
+.InfoSectionKicker,
+.TimelineKind {
+    display: inline-block;
+    font-family: var(--fn3);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(227, 216, 240, 0.7);
+}
+
+.InfoHeroCopy h1 {
+    margin: 14px 0 0;
+    font-family: var(--fn1);
+    font-size: clamp(2.8rem, 7vw, 5.6rem);
+    line-height: 0.94;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-shadow:
+        0 0 20px rgba(57, 74, 228, 0.14),
+        0 0 32px rgba(200, 107, 250, 0.1);
+}
+
+.InfoHeroLead {
+    max-width: 740px;
+    margin-top: 18px;
+    font-family: var(--fn3);
+    font-size: clamp(0.98rem, 1.45vw, 1.08rem);
+    line-height: 1.92;
+    letter-spacing: 0.04em;
+    color: rgba(232, 227, 239, 0.84);
+}
+
+.InfoHeroMetrics {
+    align-self: end;
+}
+
+.InfoHeroMetrics div {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.InfoHeroMetrics div:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.InfoHeroMetrics strong {
+    font-family: var(--fn1);
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    line-height: 1;
+    color: #fff;
+}
+
+.InfoHeroMetrics span {
+    font-family: var(--fn3);
+    font-size: 0.82rem;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    color: rgba(226, 219, 235, 0.72);
+}
+
+.InfoView {
+    display: grid;
+    gap: 26px;
+}
+
+.InfoSection {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 34px;
+    padding: 26px 0 34px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.InfoSectionHead h2 {
+    margin: 12px 0 0;
+    font-family: var(--fn1);
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    letter-spacing: 0.08em;
+    color: #fff;
+}
+
+.InfoSectionBody {
+    min-width: 0;
+}
+
+.InfoBioLead,
+.InfoTimelineLead {
+    max-width: 820px;
+    font-family: var(--fn3);
+    font-size: 1rem;
+    line-height: 1.88;
+    letter-spacing: 0.04em;
+    color: rgba(238, 232, 245, 0.86);
+}
+
+.InfoBio {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 30px;
+}
+
+.InfoBio p {
+    font-family: var(--fn3);
+    font-size: 0.94rem;
+    line-height: 1.96;
+    letter-spacing: 0.03em;
+    color: rgba(226, 221, 233, 0.82);
+}
+
+.InfoTimeline {
+    --node-core-size: 68px;
+    --node-track-size: 112px;
+    position: relative;
+    margin-top: 24px;
+    display: grid;
+    gap: 18px;
+    padding: 10px 0 6px;
+    isolation: isolate;
+}
+
+.InfoTimeline::before,
+.InfoTimeline::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.InfoTimeline::before {
+    width: 2px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 64%, white) 12%,
+            rgba(255, 255, 255, 0.94) 50%,
+            color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 64%, white) 88%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    background-size: 100% 220%;
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 44%, transparent),
+        0 0 22px color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 18%, transparent);
+    animation: neonStreamY 4.1s linear infinite;
+}
+
+.InfoTimeline::after {
+    width: 18px;
+    opacity: 0.62;
+    filter: blur(7px);
+    background:
+        radial-gradient(circle at 50% 14px, color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 56%, white) 0 2px, transparent 6px),
+        radial-gradient(circle at 50% 46px, color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 34%, white) 0 1.5px, transparent 5px),
+        radial-gradient(circle at 50% 82px, color-mix(in srgb, var(--timeline-accent, rgba(200, 107, 250, 0.88)) 42%, white) 0 2px, transparent 6px);
+    background-size: 100% 96px;
+    animation: timelineSpray 5.6s linear infinite;
+}
+
+.TimelineItem {
+    --timeline-accent: rgba(200, 107, 250, 0.88);
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--node-track-size) minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    filter: blur(6px);
+    z-index: 1;
+}
+
+.InfoTimeline.is-award .TimelineItem {
+    --timeline-accent: rgba(200, 107, 250, 0.88);
+}
+
+.InfoTimeline.is-cert .TimelineItem {
+    --timeline-accent: rgba(57, 74, 228, 0.88);
+}
+
+.InfoTimeline.in-view .TimelineItem {
+    animation: timelineItemEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(140ms + (var(--item-index) * 120ms));
+}
+
+.TimelineItem.is-left .TimelineCard {
+    grid-column: 1;
+}
+
+.TimelineItem.is-right .TimelineCard {
+    grid-column: 3;
+}
+
+.TimelineNode {
+    grid-column: 2;
+    width: var(--node-track-size);
+    height: var(--node-track-size);
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.TimelineStem,
+.TimelineBeam {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 999px;
+}
+
+.TimelineStem {
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            color-mix(in srgb, var(--timeline-accent) 68%, white) 26%,
+            rgba(255, 255, 255, 0.92) 50%,
+            color-mix(in srgb, var(--timeline-accent) 68%, white) 74%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    background-size: 100% 240%;
+    box-shadow:
+        0 0 8px color-mix(in srgb, var(--timeline-accent) 46%, transparent),
+        0 0 18px color-mix(in srgb, var(--timeline-accent) 22%, transparent);
+    animation: neonStreamY 3.2s linear infinite;
+    z-index: 0;
+}
+
+.TimelineStemTop {
+    top: 0;
+    height: calc(50% - (var(--node-core-size) / 2) + 1px);
+}
+
+.TimelineStemBottom {
+    bottom: 0;
+    height: calc(50% - (var(--node-core-size) / 2) + 1px);
+    animation-direction: reverse;
+}
+
+.TimelineItem.is-first .TimelineStemTop,
+.TimelineItem.is-last .TimelineStemBottom {
+    display: none;
+}
+
+.TimelineBeam {
+    top: 50%;
+    height: 2px;
+    width: calc((var(--node-track-size) - var(--node-core-size)) / 2 + 30px);
+    transform: translateY(-50%);
+    background:
+        linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--timeline-accent) 56%, transparent) 0%,
+            rgba(255, 255, 255, 0.94) 48%,
+            color-mix(in srgb, var(--timeline-accent) 82%, white) 100%
+        );
+    background-size: 220% 100%;
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--timeline-accent) 44%, transparent),
+        0 0 20px color-mix(in srgb, var(--timeline-accent) 22%, transparent);
+    animation: neonStreamX 2.4s linear infinite;
+    z-index: 0;
+}
+
+.TimelineBeam::before,
+.TimelineBeam::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+}
+
+.TimelineBeam::before {
+    width: 8px;
+    height: 8px;
+    right: -1px;
+    background: color-mix(in srgb, var(--timeline-accent) 82%, white);
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--timeline-accent) 52%, transparent),
+        0 0 18px color-mix(in srgb, var(--timeline-accent) 24%, transparent);
+}
+
+.TimelineBeam::after {
+    width: 16px;
+    height: 16px;
+    right: -5px;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 40%, rgba(255, 255, 255, 0.12));
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--timeline-accent) 26%, transparent),
+        inset 0 0 8px rgba(255, 255, 255, 0.04);
+}
+
+.TimelineItem.is-left .TimelineBeam {
+    right: calc(50% + (var(--node-core-size) / 2) - 1px);
+}
+
+.TimelineItem.is-left .TimelineBeam::before,
+.TimelineItem.is-left .TimelineBeam::after {
+    right: auto;
+    left: -1px;
+}
+
+.TimelineItem.is-left .TimelineBeam::after {
+    left: -5px;
+}
+
+.TimelineNode::before,
+.TimelineNode::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), color-mix(in srgb, var(--timeline-accent) 62%, white), rgba(255, 255, 255, 0.08));
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--timeline-accent) 28%, transparent),
+        0 0 22px color-mix(in srgb, var(--timeline-accent) 14%, transparent);
+    opacity: 0.9;
+}
+
+.TimelineNode::before {
+    top: 0;
+    height: calc(50% - (var(--node-core-size) / 2));
+}
+
+.TimelineNode::after {
+    bottom: 0;
+    height: calc(50% - (var(--node-core-size) / 2));
+}
+
+.TimelineItem.is-first .TimelineNode::before,
+.TimelineItem.is-last .TimelineNode::after {
+    display: none;
+}
+
+.TimelineOrb {
+    width: var(--node-core-size);
+    height: var(--node-core-size);
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 42%, rgba(255, 255, 255, 0.14));
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 58%),
+        rgba(7, 4, 14, 0.92);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 0 28px rgba(0, 0, 0, 0.18),
+        0 0 20px color-mix(in srgb, var(--timeline-accent) 26%, transparent);
+    font-family: var(--fn1);
+    font-size: 0.98rem;
+    color: #fff;
+    overflow: visible;
+    z-index: 2;
+}
+
+.TimelineOrb::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: inherit;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 34%, rgba(255, 255, 255, 0.1));
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--timeline-accent) 20%, transparent),
+        inset 0 0 10px rgba(255, 255, 255, 0.02);
+}
+
+.TimelineOrb::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, color-mix(in srgb, var(--timeline-accent) 18%, white), transparent 68%);
+    filter: blur(10px);
+    opacity: 0.54;
+    z-index: -1;
+}
+
+.TimelineNode strong {
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+    overflow: visible;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.TimelineCard {
+    position: relative;
+    overflow: hidden;
+    padding: 24px 24px 22px;
+    border-radius: 26px 12px 28px 12px;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 24%, rgba(255, 255, 255, 0.08));
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--timeline-accent) 12%, transparent), transparent 56%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 24%),
+        rgba(10, 6, 20, 0.42);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 18px 42px rgba(0, 0, 0, 0.2);
+    transform: translateZ(0);
+}
+
+.TimelineCard::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 22px;
+    width: min(120px, 42%);
+    height: 1px;
+    background: linear-gradient(90deg, var(--timeline-accent), transparent);
+}
+
+.TimelineCard::after {
+    content: "";
+    position: absolute;
+    top: -24%;
+    bottom: -24%;
+    width: 90px;
+    left: -110px;
+    opacity: 0.18;
+    transform: rotate(12deg);
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--timeline-accent) 18%, white), transparent);
+}
+
+.TimelineKind {
+    color: color-mix(in srgb, var(--timeline-accent) 62%, white);
+    opacity: 1;
+}
+
+.TimelineCardBody {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 18px;
+    align-items: center;
+}
+
+.TimelineCardBody {
+    opacity: 1;
+}
+
+.TimelineImage {
+    width: auto;
+    height: 34px;
+    object-fit: contain;
+}
+
+.AwImg,
+.CertImg,
+.CoImg {
+    width: auto;
+    object-fit: contain;
+}
+
+.CertImg,
+.CoImg {
+    filter: invert(1) brightness(2);
+}
+
+.CertImg {
+    width: 30px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.TimelineCard h3 {
+    margin: 0;
+    font-family: var(--fn1);
+    font-size: clamp(1rem, 1.8vw, 1.36rem);
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #fff;
+}
+
+.TimelineCard p {
+    margin-top: 8px;
+    display: inline-block;
+    font-family: var(--fn3);
+    font-size: 0.72rem;
+    line-height: 1.7;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(222, 214, 236, 0.6);
+    white-space: nowrap;
+    width: auto;
+    overflow: visible;
+}
+
+.ContactRail {
+    display: grid;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.ContactLink {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: center;
+    width: 100%;
+    padding: 18px 18px 18px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px 12px 22px 12px;
+    background:
+        linear-gradient(135deg, rgba(255, 89, 182, 0.07), transparent 58%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
+        rgba(10, 6, 20, 0.32);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 14px 32px rgba(0, 0, 0, 0.16);
+    color: inherit;
+}
+
+.ContactLink .CoImg {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    justify-self: center;
+}
+
+.ContactMeta {
+    display: grid;
+    gap: 6px;
+}
+
+.ContactMeta span {
+    font-family: var(--fn3);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(221, 211, 235, 0.64);
+}
+
+.ContactMeta strong {
+    font-family: var(--fn1);
+    font-size: clamp(1rem, 1.7vw, 1.26rem);
+    line-height: 1.2;
+    color: #fff;
+}
+
+.ContactLink small {
+    min-width: 70px;
+    padding: 9px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.025);
+    font-family: var(--fn3);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(243, 236, 251, 0.76);
+    text-align: center;
+}
+
+.animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: opacity 0.28s ease, transform 0.28s ease, filter 0.28s ease;
+    will-change: auto;
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+    will-change: auto;
+}
+
+[data-anim="left"] {
+    transform: none;
+}
+
+[data-anim="right"] {
+    transform: none;
+}
+
+@keyframes timelineItemEnter {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+        filter: blur(6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+    }
+}
+
+@keyframes neonStreamY {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 200%;
+    }
+}
+
+@keyframes neonStreamX {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 180% 0;
+    }
+}
+
+@keyframes timelineSpray {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 120px;
+    }
+}
+
+@media (hover: hover) {
+    .TimelineCard:hover {
+        border-color: color-mix(in srgb, var(--timeline-accent) 42%, rgba(255, 255, 255, 0.12));
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            0 24px 50px rgba(0, 0, 0, 0.24);
+        transform: translateY(-3px);
+    }
+
+    .ContactLink:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            0 22px 40px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media (max-width: 980px) {
+    .InfoHero,
+    .InfoSection {
+        grid-template-columns: 1fr;
+    }
+
+    .InfoHeroMetrics {
+        max-width: 620px;
+    }
+
+    .InfoBio {
+        grid-template-columns: 1fr;
+    }
+
+    .InfoTimeline {
+        --node-core-size: 56px;
+        --node-track-size: 76px;
+    }
+
+    .InfoTimeline::before,
+    .InfoTimeline::after {
+        left: 38px;
+        transform: none;
+    }
+
+    .TimelineItem,
+    .TimelineItem.is-left,
+    .TimelineItem.is-right {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .TimelineNode {
+        grid-column: 1;
+        width: 76px;
+        height: 76px;
+    }
+
+    .TimelineOrb {
+        width: 56px;
+        height: 56px;
+        font-size: 0.86rem;
+    }
+
+    .TimelineCard,
+    .TimelineItem.is-left .TimelineCard,
+    .TimelineItem.is-right .TimelineCard {
+        grid-column: 2;
+    }
+
+    .TimelineBeam,
+    .TimelineItem.is-left .TimelineBeam,
+    .TimelineItem.is-right .TimelineBeam {
+        left: calc(50% + (var(--node-core-size) / 2) - 1px);
+        right: auto;
+    }
+
+    .TimelineBeam::before,
+    .TimelineBeam::after,
+    .TimelineItem.is-left .TimelineBeam::before,
+    .TimelineItem.is-left .TimelineBeam::after,
+    .TimelineItem.is-right .TimelineBeam::before,
+    .TimelineItem.is-right .TimelineBeam::after {
+        right: -1px;
+        left: auto;
+    }
+
+    .TimelineBeam::after,
+    .TimelineItem.is-left .TimelineBeam::after,
+    .TimelineItem.is-right .TimelineBeam::after {
+        right: -5px;
+        left: auto;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .Infoer {
+        padding-top: 84px;
+        padding-bottom: 116px;
+    }
+
+    .InfoHero,
+    .InfoView {
+        width: min(92%, 460px);
+    }
+
+    .InfoHeroMetrics div {
+        grid-template-columns: 62px minmax(0, 1fr);
+    }
+
+    .ContactLink {
+        grid-template-columns: 40px minmax(0, 1fr);
+        padding: 16px 14px;
+    }
+
+    .ContactLink small {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll,
+    .TimelineCard,
+    .ContactLink {
+        transition: none;
+    }
+
+    .TimelineStem,
+    .TimelineBeam {
+        animation: none;
+    }
+
+    .TimelineItem {
+        animation: none !important;
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+}
+
+/* Timeline reset */
+.InfoTimeline {
+    --timeline-accent: rgba(200, 107, 250, 0.9);
+    --timeline-accent-soft: rgba(200, 107, 250, 0.18);
+    --timeline-rail-x: 58px;
+    --node-core-size: 70px;
+    margin-top: 28px;
+    gap: 20px;
+    padding: 10px 0 14px;
+}
+
+.InfoTimeline.is-award {
+    --timeline-accent: rgba(200, 107, 250, 0.9);
+    --timeline-accent-soft: rgba(200, 107, 250, 0.18);
+}
+
+.InfoTimeline.is-cert {
+    --timeline-accent: rgba(84, 132, 255, 0.9);
+    --timeline-accent-soft: rgba(84, 132, 255, 0.18);
+}
+
+.InfoTimeline::before,
+.InfoTimeline::after {
+    left: var(--timeline-rail-x);
+    transform: translateX(-50%);
+}
+
+.InfoTimeline::before {
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            color-mix(in srgb, var(--timeline-accent) 72%, white) 16%,
+            rgba(255, 255, 255, 0.96) 50%,
+            color-mix(in srgb, var(--timeline-accent) 72%, white) 84%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    background-size: 100% 220%;
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--timeline-accent) 54%, transparent),
+        0 0 26px color-mix(in srgb, var(--timeline-accent) 24%, transparent);
+    animation: neonFlowY 4.2s linear infinite;
+}
+
+.InfoTimeline::after {
+    top: 0;
+    bottom: 0;
+    width: 26px;
+    opacity: 0.6;
+    filter: blur(8px);
+    background:
+        radial-gradient(circle at 50% 12px, color-mix(in srgb, var(--timeline-accent) 56%, white) 0 1.8px, transparent 5px),
+        radial-gradient(circle at 50% 42px, color-mix(in srgb, var(--timeline-accent) 38%, white) 0 1.2px, transparent 5px),
+        radial-gradient(circle at 50% 78px, color-mix(in srgb, var(--timeline-accent) 44%, white) 0 1.8px, transparent 5px);
+    background-size: 100% 92px;
+    animation: timelineMist 5.6s linear infinite;
+}
+
+.TimelineItem {
+    display: grid;
+    grid-template-columns: 116px minmax(0, 1fr);
+    gap: clamp(18px, 2vw, 28px);
+    align-items: stretch;
+    min-height: 168px;
+}
+
+.InfoTimeline.in-view .TimelineItem {
+    animation: timelineCardEnter 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(140ms + (var(--item-index) * 120ms));
+}
+
+.TimelineNode {
+    width: 116px;
+    min-height: 100%;
+    position: relative;
+}
+
+.TimelineNode::before,
+.TimelineNode::after {
+    display: none;
+}
+
+.TimelineConnector {
+    position: absolute;
+    top: 50%;
+    left: var(--timeline-rail-x);
+    width: clamp(34px, 5vw, 64px);
+    height: 2px;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--timeline-accent) 32%, transparent) 0%,
+            rgba(255, 255, 255, 0.95) 50%,
+            color-mix(in srgb, var(--timeline-accent) 86%, white) 100%
+        );
+    background-size: 200% 100%;
+    box-shadow:
+        0 0 10px color-mix(in srgb, var(--timeline-accent) 46%, transparent),
+        0 0 22px color-mix(in srgb, var(--timeline-accent) 20%, transparent);
+    animation: neonFlowX 2.8s linear infinite;
+}
+
+.TimelineConnector::before,
+.TimelineConnector::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+}
+
+.TimelineConnector::before {
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: color-mix(in srgb, var(--timeline-accent) 86%, white);
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--timeline-accent) 54%, transparent),
+        0 0 20px color-mix(in srgb, var(--timeline-accent) 24%, transparent);
+}
+
+.TimelineConnector::after {
+    right: -7px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 28%, rgba(255, 255, 255, 0.12));
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--timeline-accent) 26%, transparent),
+        inset 0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+.TimelineOrb {
+    position: absolute;
+    top: 50%;
+    left: var(--timeline-rail-x);
+    width: var(--node-core-size);
+    height: var(--node-core-size);
+    transform: translate(-50%, -50%);
+    background:
+        radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.18), transparent 56%),
+        radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--timeline-accent-soft) 80%, transparent), transparent 72%),
+        rgba(8, 5, 16, 0.94);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 0 28px rgba(0, 0, 0, 0.22),
+        0 0 22px color-mix(in srgb, var(--timeline-accent) 24%, transparent);
+}
+
+.TimelineOrb::before {
+    inset: 6px;
+    box-shadow:
+        0 0 12px color-mix(in srgb, var(--timeline-accent) 24%, transparent),
+        inset 0 0 10px rgba(255, 255, 255, 0.02);
+}
+
+.TimelineOrb::after {
+    inset: -10px;
+    opacity: 0.58;
+    filter: blur(11px);
+    animation: timelinePulse 2.8s ease-in-out infinite;
+}
+
+.TimelineNode strong {
+    min-width: 1ch;
+}
+
+.TimelineCard {
+    min-height: 168px;
+    display: grid;
+    align-content: start;
+    gap: 16px;
+    padding: 22px 24px 24px 28px;
+    clip-path: polygon(0 0, calc(100% - 42px) 0, 100% 42px, 100% 100%, 0 100%);
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 28%, rgba(255, 255, 255, 0.08));
+    background:
+        linear-gradient(135deg, color-mix(in srgb, var(--timeline-accent) 14%, transparent), transparent 52%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012)),
+        rgba(9, 5, 18, 0.56);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 24px 50px rgba(0, 0, 0, 0.24);
+}
+
+.TimelineCard::before {
+    top: 18px;
+    left: 28px;
+    width: min(150px, 40%);
+}
+
+.TimelineCard::after {
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    width: auto;
+    background: none;
+    transform: none;
+    inset: 1px;
+    clip-path: polygon(0 0, calc(100% - 43px) 0, 100% 43px, 100% 100%, 0 100%);
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 12%, rgba(255, 255, 255, 0.03));
+    opacity: 0.7;
+}
+
+.TimelineCardTopline {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-right: 16px;
+}
+
+.TimelineIndex {
+    padding: 7px 10px 6px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 22%, rgba(255, 255, 255, 0.1));
+    background: color-mix(in srgb, var(--timeline-accent-soft) 90%, transparent);
+    font-family: var(--fn3);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(248, 243, 255, 0.82);
+}
+
+.TimelineCardBody {
+    margin-top: 0;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 18px;
+}
+
+.TimelineVisual {
+    position: relative;
+    height: 78px;
+    display: grid;
+    place-items: center;
+    border-radius: 22px 10px 22px 10px;
+    border: 1px solid color-mix(in srgb, var(--timeline-accent) 18%, rgba(255, 255, 255, 0.06));
+    background:
+        radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--timeline-accent) 16%, white), transparent 70%),
+        rgba(255, 255, 255, 0.02);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 12px 28px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+.TimelineVisual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--timeline-accent), transparent 82%);
+}
+
+.TimelineImage {
+    max-width: 42px;
+    height: 36px;
+}
+
+.TimelineCopy {
+    min-width: 0;
+}
+
+.TimelineCard h3 {
+    font-family: var(--fn2);
+    font-size: clamp(1.02rem, 1.8vw, 1.34rem);
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+}
+
+.TimelineCard p {
+    margin: 10px 0 0;
+    display: block;
+    white-space: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+@keyframes timelineCardEnter {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+        filter: blur(6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+    }
+}
+
+@keyframes neonFlowY {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 200%;
+    }
+}
+
+@keyframes neonFlowX {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 180% 0;
+    }
+}
+
+@keyframes timelineMist {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 120px;
+    }
+}
+
+@keyframes timelinePulse {
+    0%,
+    100% {
+        opacity: 0.48;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.72;
+        transform: scale(1.04);
+    }
+}
+
+@media (hover: hover) {
+    .TimelineCard:hover {
+        border-color: color-mix(in srgb, var(--timeline-accent) 42%, rgba(255, 255, 255, 0.12));
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            0 28px 56px rgba(0, 0, 0, 0.26);
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 980px) {
+    .InfoTimeline {
+        --timeline-rail-x: 38px;
+        --node-core-size: 58px;
+    }
+
+    .InfoTimeline::before,
+    .InfoTimeline::after {
+        left: var(--timeline-rail-x);
+        transform: translateX(-50%);
+    }
+
+    .TimelineItem,
+    .TimelineItem.is-left,
+    .TimelineItem.is-right {
+        grid-template-columns: 78px minmax(0, 1fr);
+        gap: 16px;
+        min-height: 150px;
+    }
+
+    .TimelineNode {
+        width: 78px;
+    }
+
+    .TimelineConnector {
+        width: 30px;
+    }
+
+    .TimelineCard,
+    .TimelineItem.is-left .TimelineCard,
+    .TimelineItem.is-right .TimelineCard {
+        min-height: 150px;
+        padding: 20px 18px 20px 20px;
+        clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+    }
+
+    .TimelineCard::after {
+        clip-path: polygon(0 0, calc(100% - 29px) 0, 100% 29px, 100% 100%, 0 100%);
+    }
+
+    .TimelineCardTopline {
+        padding-right: 8px;
+    }
+
+    .TimelineCardBody {
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .TimelineVisual {
+        height: 64px;
+    }
+
+    .TimelineImage {
+        max-width: 34px;
+        height: 30px;
+    }
+
+    .TimelineCard h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .InfoTimeline::before,
+    .InfoTimeline::after,
+    .TimelineConnector,
+    .TimelineOrb::after {
+        animation: none;
+    }
+}
+
+/* Recognition rebuild */
+.RecognitionField,
+.CredentialDeck {
+    margin-top: 28px;
+}
+
+.RecognitionField {
+    display: grid;
+    gap: 20px;
+}
+
+.RecognitionStage {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 18px;
+    min-height: 520px;
+    padding: 16px 0 6px;
+    isolation: isolate;
+}
+
+.RecognitionStage::before,
+.RecognitionStage::after,
+.RecognitionStageAura {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.RecognitionStage::before {
+    inset: 24px 0 40px 42px;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+        radial-gradient(circle at 12% 18%, rgba(200, 107, 250, 0.16), transparent 26%),
+        radial-gradient(circle at 84% 24%, rgba(101, 128, 255, 0.12), transparent 24%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent 38%);
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 72% 100%, 0 100%);
+    opacity: 0.85;
+}
+
+.RecognitionStage::after {
+    inset: 0;
+    background:
+        linear-gradient(110deg, transparent 0 46%, rgba(255, 255, 255, 0.06) 46.5%, transparent 47%),
+        linear-gradient(135deg, transparent 0 68%, rgba(255, 255, 255, 0.04) 68.5%, transparent 69%);
+    opacity: 0.32;
+}
+
+.RecognitionStageAura {
+    inset: 48px 18% 70px 6%;
+    background:
+        radial-gradient(circle at 24% 30%, rgba(200, 107, 250, 0.18), transparent 22%),
+        radial-gradient(circle at 74% 62%, rgba(88, 132, 255, 0.16), transparent 24%);
+    filter: blur(22px);
+    opacity: 0.86;
+    z-index: 0;
+    animation: recognitionAura 9s ease-in-out infinite alternate;
+}
+
+.RecognitionPlate {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    min-height: 212px;
+    padding: 22px 22px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%);
+    background:
+        linear-gradient(140deg, rgba(200, 107, 250, 0.12), transparent 52%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+        rgba(8, 5, 16, 0.58);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 20px 44px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+}
+
+.RecognitionPlate::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+}
+
+.RecognitionPlate::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    width: min(150px, 48%);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(200, 107, 250, 0.94), transparent);
+    pointer-events: none;
+}
+
+.plate-1 {
+    grid-column: 1 / span 7;
+    grid-row: 1;
+    transform: translateY(28px) rotate(-1.4deg);
+}
+
+.plate-2 {
+    grid-column: 8 / span 5;
+    grid-row: 1;
+    min-height: 248px;
+    transform: rotate(1.1deg);
+}
+
+.plate-3 {
+    grid-column: 2 / span 5;
+    grid-row: 2;
+    min-height: 236px;
+    transform: rotate(-0.9deg);
+}
+
+.plate-4 {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+    transform: translateY(-18px) rotate(1.3deg);
+}
+
+.RecognitionPlateTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.RecognitionKind,
+.CredentialKind {
+    display: inline-block;
+    font-family: var(--fn3);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(235, 226, 246, 0.7);
+}
+
+.RecognitionSerial,
+.CredentialId span {
+    font-family: var(--fn1);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    color: #fff;
+}
+
+.RecognitionPlateBody {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 18px;
+    align-items: center;
+}
+
+.RecognitionGlyph {
+    position: relative;
+    height: 84px;
+    display: grid;
+    place-items: center;
+    border-radius: 22px 10px 22px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+        radial-gradient(circle at 50% 32%, rgba(200, 107, 250, 0.18), transparent 66%),
+        rgba(255, 255, 255, 0.02);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 12px 28px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+.RecognitionGlyph::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 48%),
+        linear-gradient(180deg, rgba(200, 107, 250, 0.24), transparent 64%);
+    opacity: 0.58;
+}
+
+.RecognitionImage {
+    width: auto;
+    max-width: 44px;
+    height: 38px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.RecognitionCopy h3,
+.CredentialMain h3 {
+    margin: 0;
+    font-family: var(--fn2);
+    font-size: clamp(1.04rem, 1.85vw, 1.42rem);
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: #fff;
+}
+
+.RecognitionCopy p,
+.CredentialMain p {
+    margin: 10px 0 0;
+    font-family: var(--fn3);
+    font-size: 0.72rem;
+    line-height: 1.7;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(226, 220, 238, 0.6);
+}
+
+.RecognitionLedger {
+    display: grid;
+    gap: 10px;
+    padding-left: 12px;
+}
+
+.RecognitionLedgerItem {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px max-content minmax(0, 1fr);
+    column-gap: 0;
+    align-items: center;
+    min-height: 82px;
+    padding: 0 0 0 4px;
+}
+
+.RecognitionLedgerItem::after {
+    content: "";
+    position: absolute;
+    left: 56px;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(200, 107, 250, 0.22), rgba(255, 255, 255, 0.04), transparent);
+}
+
+.RecognitionLedgerIndex {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(200, 107, 250, 0.24);
+    background: rgba(12, 7, 24, 0.74);
+    font-family: var(--fn1);
+    font-size: 0.8rem;
+    color: #fff;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+        0 0 16px rgba(200, 107, 250, 0.16);
+}
+
+.RecognitionLedgerTrack {
+    position: relative;
+    width: var(--ledger-track-width, 42px);
+    height: 2px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg, rgba(200, 107, 250, 0.7), rgba(255, 255, 255, 0.86), rgba(87, 128, 255, 0.58));
+    background-size: 200% 100%;
+    box-shadow:
+        0 0 10px rgba(200, 107, 250, 0.18),
+        0 0 18px rgba(87, 128, 255, 0.12);
+    animation: neonFlowX 2.8s linear infinite;
+}
+
+.RecognitionLedgerTrack::after {
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #f5efff;
+    box-shadow:
+        0 0 10px rgba(200, 107, 250, 0.3),
+        0 0 18px rgba(87, 128, 255, 0.16);
+}
+
+.RecognitionLedgerCopy {
+    position: relative;
+    min-width: 0;
+    padding-left: 18px;
+}
+
+.RecognitionLedgerCopy::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 18px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(200, 107, 250, 0.12));
+    box-shadow:
+        0 0 10px rgba(200, 107, 250, 0.12),
+        0 0 18px rgba(87, 128, 255, 0.08);
+}
+
+.RecognitionLedgerCopy h3 {
+    margin: 0;
+    font-family: var(--fn2);
+    font-size: 1rem;
+    color: #fff;
+}
+
+.RecognitionLedgerCopy p {
+    margin: 6px 0 0;
+    font-family: var(--fn3);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(228, 220, 239, 0.54);
+}
+
+.CredentialDeck {
+    display: grid;
+    gap: 18px;
+}
+
+.CredentialStrip {
+    position: relative;
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr) 92px;
+    gap: 18px;
+    align-items: center;
+    min-height: 146px;
+    padding: 20px 22px 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background:
+        linear-gradient(90deg, rgba(84, 132, 255, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 62%);
+    overflow: hidden;
+}
+
+.CredentialStrip::before {
+    content: "";
+    position: absolute;
+    left: 88px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background:
+        linear-gradient(120deg, rgba(84, 132, 255, 0.06), transparent 36%),
+        linear-gradient(90deg, transparent 0 62%, rgba(255, 255, 255, 0.03) 62.5%, transparent 63%);
+    clip-path: polygon(22px 0, 100% 0, calc(100% - 32px) 100%, 0 100%);
+    opacity: 0.92;
+}
+
+.CredentialStrip::after {
+    content: "";
+    position: absolute;
+    left: 110px;
+    right: 22px;
+    top: 18px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(84, 132, 255, 0.8), transparent 72%);
+}
+
+.strip-2 {
+    margin-left: 36px;
+}
+
+.strip-3 {
+    margin-right: 44px;
+}
+
+.CredentialEdge {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    bottom: 16px;
+    width: 4px;
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg, rgba(84, 132, 255, 0), rgba(84, 132, 255, 0.9) 20%, rgba(255, 255, 255, 0.94) 50%, rgba(84, 132, 255, 0.9) 80%, rgba(84, 132, 255, 0));
+    box-shadow:
+        0 0 12px rgba(84, 132, 255, 0.28),
+        0 0 24px rgba(84, 132, 255, 0.16);
+}
+
+.CredentialId,
+.CredentialMain,
+.CredentialSeal {
+    position: relative;
+    z-index: 1;
+}
+
+.CredentialId {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.CredentialId span {
+    display: inline-grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    border: 1px solid rgba(84, 132, 255, 0.22);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+        rgba(8, 10, 20, 0.74);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.CredentialMain {
+    min-width: 0;
+    padding: 8px 0;
+}
+
+.CredentialSeal {
+    justify-self: end;
+    min-width: 130px;
+    width: 130px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+    border-radius: 25px 10px 26px 10px;
+    border: 1px solid rgba(84, 132, 255, 0.16);
+    background:
+        radial-gradient(circle at 50% 30%, rgba(84, 132, 255, 0.2), transparent 68%),
+        rgba(255, 255, 255, 0.018);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.CredentialImage {
+    width: auto;
+    max-width: 70px;
+    height: 40px;
+    object-fit: contain;
+}
+
+@keyframes recognitionAura {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.98);
+        opacity: 0.74;
+    }
+
+    100% {
+        transform: translate3d(12px, -8px, 0) scale(1.04);
+        opacity: 0.94;
+    }
+}
+
+@media (hover: hover) {
+    .RecognitionPlate:hover {
+        transform: translateY(-4px);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            0 28px 54px rgba(0, 0, 0, 0.26);
+    }
+
+    .CredentialStrip:hover .CredentialEdge {
+        box-shadow:
+            0 0 16px rgba(84, 132, 255, 0.34),
+            0 0 28px rgba(84, 132, 255, 0.18);
+    }
+}
+
+@media (max-width: 980px) {
+    .RecognitionStage {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 16px;
+        padding: 0;
+    }
+
+    .RecognitionStage::before {
+        inset: 12px 0 18px 24px;
+    }
+
+    .RecognitionStageAura {
+        inset: 22px 10% 32px 0;
+    }
+
+    .RecognitionPlate,
+    .plate-1,
+    .plate-2,
+    .plate-3,
+    .plate-4 {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 196px;
+        transform: none;
+    }
+
+    .RecognitionLedger {
+        padding-left: 0;
+    }
+
+    .RecognitionLedgerItem {
+        grid-template-columns: 44px max-content minmax(0, 1fr);
+    }
+
+    .RecognitionLedgerItem::after {
+        left: 48px;
+    }
+
+    .RecognitionLedgerTrack {
+        width: var(--ledger-track-width, 42px);
+    }
+
+    .RecognitionLedgerCopy {
+        padding-left: 14px;
+    }
+
+    .RecognitionLedgerCopy::before {
+        top: 17px;
+        width: 14px;
+    }
+
+    .CredentialStrip,
+    .strip-2,
+    .strip-3 {
+        margin-left: 0;
+        margin-right: 0;
+        grid-template-columns: 68px minmax(0, 1fr);
+        padding: 18px 16px 18px 0;
+    }
+
+    .CredentialStrip::before {
+        left: 68px;
+        clip-path: polygon(18px 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
+    }
+
+    .CredentialStrip::after {
+        left: 88px;
+        right: 16px;
+    }
+
+    .CredentialSeal {
+        grid-column: 2;
+        justify-self: start;
+        width: 62px;
+        height: 62px;
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 760px) {
+    .RecognitionPlate {
+        padding: 20px 18px 20px;
+        min-height: 184px;
+    }
+
+    .RecognitionPlateBody {
+        grid-template-columns: 66px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .RecognitionGlyph {
+        height: 66px;
+    }
+
+    .RecognitionImage {
+        max-width: 34px;
+        height: 30px;
+    }
+
+    .RecognitionLedgerItem {
+        min-height: 74px;
+    }
+
+    .CredentialStrip {
+        min-height: 132px;
+    }
+
+    .CredentialId span {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .RecognitionStageAura,
+    .RecognitionLedgerTrack {
+        animation: none;
+    }
+}
