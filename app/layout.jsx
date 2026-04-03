@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
             </head>
             <body>
                 <SiteShell>{children}</SiteShell>
+                <SpeedInsights />
             </body>
         </html>
     );
